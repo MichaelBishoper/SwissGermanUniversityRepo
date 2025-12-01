@@ -1,0 +1,157 @@
+/* Global Vintage-Themed CSS (Dark Blue Version) */
+
+/* Reset & Base Typography */
+html, body {
+    margin: 7px;
+    padding: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    background-color: #dce3f0; /* light dusty blue */
+    color: #1e2a3a;            /* dark desaturated blue */
+    line-height: 1.6;
+}
+
+/* Headings with vintage serif style */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Garamond", "Georgia", serif;
+    color: #162032; /* deeper blue */
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+}
+
+/* Hyperlinks with subtle vintage underline */
+a {
+    color: #2f4a6d;       /* muted navy */
+    text-decoration: underline;
+}
+a:hover {
+    color: #1a2738;       /* darker navy */
+}
+
+/* Global container spacing */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Paragraph spacing */
+p {
+    margin: 0.8em 0;
+}
+
+/* Vintage borders for images and cards */
+img, .card {
+    border: 2px solid #6b7c99; /* bluish-gray border */
+    padding: 6px;
+    background-color: #f5f8ff; /* cool pale background */
+}
+
+/* Buttons with a classic old-book look (blue variant) */
+button {
+    background-color: #8fa4c6; /* vintage steel blue */
+    border: 1px solid #5d6d8a;
+    color: #1e2a3a;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: inherit;
+}
+button:hover {
+    background-color: #7c90b2; /* muted hover blue */
+}
+
+/* Lists */
+ul, ol {
+    padding-left: 1.5em;
+}
+
+/* Horizontal rule styled like a vintage divider */
+hr {
+    border: none;
+    border-top: 2px solid #6b7c99;
+    margin: 20px 0;
+}
+
+/* NAVBAR STYLING */
+
+.main-nav {
+    background-color: #749ad7;
+    height: 60px;           
+    display: flex;
+    align-items: center;   
+}
+
+.nav-logo {
+    height: 55px;       /* fits nicely in a 60px navbar */
+    width: auto;        /* keeps aspect ratio */
+    margin-right: 20px; /* spacing between logo + links */
+    border: none;
+    padding: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;          /* horizontal nav */
+    align-items: center;
+}
+
+.nav-item a {
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Hover effect */
+.nav-item a:hover {
+    background-color: #555555;
+    color: white;
+}
+
+
+
+/* FOOTER STYLING */
+
+/* Footer main layout */
+.site-footer {
+    margin-top: 40px;
+    background: #dce3f0;
+    border-top: 3px solid #6b7c99;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+}
+
+/* Logo */
+.footer-logo {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+/* Social icons */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-socials img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease;
+}
+
+.footer-socials img:hover {
+    transform: scale(1.15);
+}
+
+/* Map area */
+.footer-map iframe {
+    border: 2px solid #6b7c99;
+    border-radius: 4px;
+}

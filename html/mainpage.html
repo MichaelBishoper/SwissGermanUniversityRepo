@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Main page</title>
+    <style>
+
+        /* Slider */
+
+        .slider {
+            position: relative;
+            width: 600px;
+            height: 350px;
+            overflow: hidden;
+            border: 3px solid #000000;
+            background: #6896df;
+        }
+
+        .slides {
+            display: flex;
+            width: max-content; 
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .slides img {
+            width: 600px;   
+            height: 350px;   
+            object-fit: cover; 
+            border: none;
+            padding: 0;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #32a2e8;
+            border: 1px solid #000000;
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 20px;
+            user-select: none;
+            transition: background 0.3s ease-in-out; 
+        }
+
+        .arrow:hover {
+            background: #abb0dc;
+        }
+
+        .left { left: 10px; }
+        .right { right: 10px; }
+
+         /* 2-column layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 600px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* 2×2 grid for the right side */
+        .nav-block {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Individual section */
+        .nav-section {
+            border: 2px solid black;
+            padding: 15px;
+            background: #dce3f0;
+        }
+
+        /* Section heading */
+        .nav-section h2 {
+            margin-top: 0;
+            font-family: Georgia, serif;
+        }
+
+        /* List styling */
+        .nav-section ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+
+        .nav-section li {
+            margin: 6px 0;
+        }
+
+        /* Links */
+        .nav-section a {
+            text-decoration: none;
+            color: #2f4a6d;
+            font-weight: bold;
+        }
+
+        .nav-section a:hover {
+            color: #162032;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<nav class="main-nav">
+    <ul class="nav-list">
+        <li class="nav-item">
+            <img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo">
+        </li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="programs.html">Programs</a></li>
+        <li class="nav-item"><a href="#">Placeholder</a></li>
+        <li class="nav-item"><a href="#">Placeholder</a></li>
+    </ul>
+</nav>
+
+<h1>Welcome to SGU!</h1>
+
+<div class="main-layout">
+
+    <!-- LEFT COLUMN: Slider -->
+    <div class="slider">
+        <div class="slides" id="slides">
+            <img src="../media/SGU_Banner.webp" alt="Image 1">
+            <img src="../media/SGU_Banner2.webp" alt="Image 2">
+            <img src="../media/SGU_Banner3.webp" alt="Image 3">
+        </div>
+
+        <div class="arrow left" onclick="prev()">&#10094;</div>
+        <div class="arrow right" onclick="next()">&#10095;</div>
+    </div>
+
+    <!-- RIGHT COLUMN: Section Grid -->
+    <div class="nav-block">
+
+        <div class="nav-section">
+            <h2>Faculties</h2>
+            <ul>
+                <li><a href="#">Faculty of Engineering (FEIT) </a></li>
+                <li><a href="#">Faculty of Business & Communication (FBC) </a></li>
+                <li><a href="#">Faculty of Life Science Technology (FLST) </a></li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <h2>Prestige</h2>
+            <ul>
+                <li><a href="#">Rankings</a></li>
+                <li><a href="#">Achievements</a></li>
+                <li><a href="#">Awards</a></li>
+                <li><a href="#">Alumni</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <h2>Prestige</h2>
+            <ul>
+                <li><a href="#">Rankings</a></li>
+                <li><a href="#">Achievements</a></li>
+                <li><a href="#">Awards</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <h2>Alumni</h2>
+            <ul>
+                <li><a href="#">Alumni Network</a></li>
+                <li><a href="#">Success Stories</a></li>
+                <li><a href="#">Events</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+
+    <div class="footer-left">
+        <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
+
+        <div class="footer-socials">
+            <a href="https://x.com/swissgermanuniv" target="_blank">
+                <img src="../media/x_logo.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/swissgermanuniv" target="_blank">
+                <img src="../media/ig_logo.png" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@SwissGermanUniversityOfficial" target="_blank">
+                <img src="../media/yt_logo.png" alt="YouTube">
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
+            width="100%" 
+            height="230" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+</footer>
+
+
+    <script>
+    let index = 0;
+    const slides = document.getElementById("slides");
+    const total = 3;
+
+
+    function updateSlide() {
+    slides.style.transform = `translateX(${-index * 600}px)`;
+    }
+
+
+    function next() {
+    index = (index + 1) % total;
+    updateSlide();
+    }
+
+
+    function prev() {
+    index = (index - 1 + total) % total;
+    updateSlide();
+    }
+    </script>
+
+    </body>
+</html>
