@@ -102,6 +102,25 @@
         .nav-section a:hover {
             color: #162032;
         }
+
+        /* WHATSAPP */
+        .whatsapp-float {
+            position: fixed;      
+            bottom: 20px;         
+            right: 20px;          
+            width: 60px;         
+            height: 60px;
+            z-index: 100;        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -111,16 +130,25 @@
 <nav class="main-nav">
     <ul class="nav-list">
         <li class="nav-item">
-            <img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo">
+            <a href="#"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
         </li>
         <li class="nav-item"><a href="about.html">About</a></li>
         <li class="nav-item"><a href="programs.html">Programs</a></li>
-        <li class="nav-item"><a href="#">Placeholder</a></li>
+        <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
         <li class="nav-item"><a href="#">Placeholder</a></li>
     </ul>
 </nav>
 
+<!-- WHATSAPP BUTTON -->
+<a href="https://api.whatsapp.com/send?phone=628118010600" target="_blank" class="whatsapp-float">
+    <img src="../media/wa_logo.png" alt="WhatsApp"/>
+</a>
+
+<!-- HEADER END -->
+
 <h1>Welcome to SGU!</h1>
+
+<hr>
 
 <div class="main-layout">
 
@@ -149,9 +177,8 @@
         </div>
 
         <div class="nav-section">
-            <h2>Prestige</h2>
+            <a href="../html/accomplishments.html"><h2>Accomplishments</h2></a>
             <ul>
-                <li><a href="#">Rankings</a></li>
                 <li><a href="#">Achievements</a></li>
                 <li><a href="#">Awards</a></li>
                 <li><a href="#">Alumni</a></li>
@@ -161,7 +188,6 @@
         <div class="nav-section">
             <h2>Prestige</h2>
             <ul>
-                <li><a href="#">Rankings</a></li>
                 <li><a href="#">Achievements</a></li>
                 <li><a href="#">Awards</a></li>
             </ul>
@@ -177,8 +203,13 @@
         </div>
     </div>
 </div>
+<br>
+<h2 class="centerMe"> Our Partner Universities </h2>
+<div class="centerMe">
+    <img src="../media/PartnerUniversities.png" width="1640">
+</div>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer class="site-footer">
 
     <div class="footer-left">
@@ -210,6 +241,7 @@
 
 </footer>
 
+    <!-- FOOTER END -->
 
     <script>
     let index = 0;
