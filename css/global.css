@@ -168,11 +168,10 @@ hr {
 /* Added by arthur */
 
 /* For PNG images */
-
 img.png-img {
   background: transparent !important;
   border: none !important;
-  padding: 0 !important;      /* ← important fix */
+  padding: 0 !important;      
   box-shadow: none !important;
   display: block;
 }
