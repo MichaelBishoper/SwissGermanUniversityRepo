@@ -47,6 +47,7 @@ img, .card {
     background-color: #f5f8ff; /* cool pale background */
 }
 
+
 /* Buttons with a classic old-book look (blue variant) */
 button {
     background-color: #8fa4c6; /* vintage steel blue */
@@ -162,3 +163,17 @@ hr {
     align-items: center;
     justify-content: center;
 }
+
+
+/* Added by arthur */
+
+/* For PNG images */
+
+img.png-img {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;      /* ← important fix */
+  box-shadow: none !important;
+  display: block;
+}
+

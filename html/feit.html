@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FEIT Section Demo</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    /* GLOBAL LAYOUT */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+    }
+
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* HERO (IMAGE STACK) */
+    .hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+    .hero img.hero-bg {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 430px;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(204, 0, 0, 0.75);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .hero-logo {
+      width: 220px;
+      height: auto;
+    }
+
+    /* GENERIC SECTION ROWS (VISION / MISSION / GOALS) */
+
+    .section-row {
+      display: flex;
+      padding: 40px 40px 60px 40px;
+      box-sizing: border-box;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    /* Mission: inverted layout + slightly darker background */
+    .section-row.reverse {
+      flex-direction: row-reverse;
+      background: rgba(0, 0, 0, 0.03);
+      border-radius: 4px;
+    }
+
+    .section-image {
+      flex: 0 0 35%;
+    }
+
+    .section-image img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .section-text {
+      flex: 1;
+    }
+
+    .section-text h2 {
+      margin: 0 0 15px 0;
+      font-size: 22px;
+    }
+
+    .section-text p,
+    .section-text ol,
+    .section-text li {
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .section-text ol {
+      padding-left: 20px;
+    }
+
+    /* BASIC RESPONSIVE TWEAKS */
+    @media (max-width: 800px) {
+      .section-row,
+      .section-row.reverse {
+        flex-direction: column;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+     <!-- HEADER -->
+
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
+            </li>
+            <li class="nav-item"><a href="about.html">About</a></li>
+            <li class="nav-item"><a href="programs.html">Programs</a></li>
+            <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
+            <li class="nav-item"><a href="#">Placeholder</a></li>
+        </ul>
+    </nav>
+  <div class="page-wrapper">
+   
+
+    <!-- HERO IMAGE STACK -->
+    <section class="hero">
+      <img class="hero-bg " 
+           src="../media/facultybackground/background_eit.jpg"alt="Faculty background">
+
+      <div class="hero-overlay">
+        <div class="hero-title">
+          Faculty of Engineering &amp; Information Technology
+        </div>
+        <img class="hero-logo png-img"
+             src="../media/facultybadge/logo_eit.png"
+             alt="EIT logo">
+      </div>
+    </section>
+
+    <!-- VISION (image left, text right) -->
+    <section class="section-row">
+      <div class="section-image">
+        <img src="../media/facultybackground/background_eit.jpg"
+             alt="Lab photo">
+      </div>
+
+      <div class="section-text">
+        <h2>Vision</h2>
+        <p>
+          Faculty of Engineering and IT (FEIT) to become the best education
+          institution that is superior in engineering and information technology
+          class with global competitiveness as well as integrity, learning culture,
+          and high social responsibility.
+        </p>
+      </div>
+    </section>
+
+    <!-- MISSION (image right, text left, darker background) -->
+    <section class="section-row reverse">
+      <div class="section-image">
+        <img src="../media/facultybackground/background_eit.jpg" alt="Mission image">
+      </div>
+
+      <div class="section-text">
+        <h2>Mission</h2>
+        <ol>
+          <li>To conduct education with good faculty governance that fulfills the principles of discipline, transparency, accountability, responsibility, and fairness.</li>
+          <li>To perform “Tri Dharma” higher education activities in order to produce graduates with both national and global competitiveness, honesty, integrity, and social responsibility.</li>
+          <li>To conduct the best in its class for Science &amp; Technology research and development as a part of increasing the nation’s level of competitiveness and human civilization.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- GOALS (same styling as Vision: image left, text right) -->
+    <section class="section-row">
+      <div class="section-image">
+        <img src="../media/facultybackground/background_eit.jpg"
+             alt="Goals image">
+      </div>
+
+      <div class="section-text">
+        <h2>Goals</h2>
+        <ol>
+          <li>To produce tenacious and tough graduates who possess balanced hard and soft skills.</li>
+          <li>To produce graduates with good character, integrity as well as technical, managerial, entrepreneurial, and leadership competence, thus able to be adaptable to environment changes.</li>
+          <li>To create scientific work for society and industry that is developed through good academic culture.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Staffs go here -->
+
+    </div>
+</body>
+</html>
