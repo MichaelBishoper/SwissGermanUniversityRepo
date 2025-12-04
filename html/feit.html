@@ -68,7 +68,6 @@
       align-items: flex-start;
     }
 
-    /* Mission: inverted layout + slightly darker background */
     .section-row.reverse {
       flex-direction: row-reverse;
       background: rgba(0, 0, 0, 0.03);
@@ -114,6 +113,7 @@
       padding: 40px;
       box-sizing: border-box;
     }
+
     .lectrer-item {
       margin-bottom: 40px;
       text-align: center;
@@ -132,9 +132,6 @@
       text-align: center;
     }
 
-    
-
-    /* BASIC RESPONSIVE TWEAKS */
     @media (max-width: 800px) {
       .section-row,
       .section-row.reverse {
@@ -142,164 +139,323 @@
         padding: 20px;
       }
     }
+  
+    .event-section {
+      padding: 40px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .event-box {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .event-item {
+      flex: 0 0 calc(50% - 40px);
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* ====== PROGRAM GRID (FLEXBOX) ====== */
+
+    .program-grid-section {
+      margin: 60px auto;
+      max-width: 1200px;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+
+    .program-grid-title {
+      font-size: 24px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .program-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .program-card {
+      flex: 0 0 calc(33.333% - 24px);
+      max-width: 340px;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+    }
+
+    /* FIXED — portrait ratio for 1200x1500 */
+    .program-card-image-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 125%; /* FIXED */
+      overflow: hidden;
+    }
+
+    .program-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.25s ease-out;
+    }
+
+    .program-card-label {
+      padding: 12px 16px 14px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .program-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+    }
+
+    .program-card:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 900px) {
+      .program-card {
+        flex: 0 0 calc(50% - 24px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .program-grid-section {
+        padding: 0 16px;
+      }
+
+      .program-card {
+        flex: 0 0 100%;
+      }
+    }
+
   </style>
 </head>
 <body>
-     <!-- HEADER -->
 
-    <nav class="main-nav">
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a href="#"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
-            </li>
-            <li class="nav-item"><a href="about.html">About</a></li>
-            <li class="nav-item"><a href="programs.html">Programs</a></li>
-            <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
-            <li class="nav-item"><a href="#">Placeholder</a></li>
-        </ul>
-    </nav>
-  <div class="page-wrapper">
-   
+<nav class="main-nav">
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a href="#"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
+    </li>
+    <li class="nav-item"><a href="about.html">About</a></li>
+    <li class="nav-item"><a href="programs.html">Programs</a></li>
+    <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
+    <li class="nav-item"><a href="#">Placeholder</a></li>
+  </ul>
+</nav>
 
-    <!-- HERO IMAGE STACK -->
-    <section class="hero">
-      <img class="hero-bg " 
-           src="../media/facultybackground/background_eit.jpg"alt="Faculty background">
+<div class="page-wrapper">
 
-      <div class="hero-overlay">
-        <div class="hero-title">
-          Faculty of Engineering &amp; Information Technology
-        </div>
-        <img class="hero-logo png-img"
-             src="../media/facultybadge/logo_eit.png"
-             alt="EIT logo">
-      </div>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-bg" src="../media/facultybackground/background_eit.jpg" alt="Faculty background">
+    <div class="hero-overlay">
+      <div class="hero-title">Faculty of Engineering &amp; Information Technology</div>
+      <img class="hero-logo png-img" src="../media/facultybadge/logo_eit.png" alt="EIT logo">
+    </div>
+  </section>
 
-    <!-- VISION (image left, text right) -->
-    <section class="section-row">
-      <div class="section-image">
-        <img src="../media/facultybackground/background_eit.jpg"
-             alt="Lab photo">
-      </div>
-
-      <div class="section-text">
-        <h2>Vision</h2>
-        <p>
-          Faculty of Engineering and IT (FEIT) to become the best education
-          institution that is superior in engineering and information technology
-          class with global competitiveness as well as integrity, learning culture,
-          and high social responsibility.
-        </p>
-      </div>
-    </section>
-
-    <!-- MISSION (image right, text left, darker background) -->
-    <section class="section-row reverse">
-      <div class="section-image">
-        <img src="../media/facultybackground/background_eit.jpg" alt="Mission image">
-      </div>
-
-      <div class="section-text">
-        <h2>Mission</h2>
-        <ol>
-          <li>To conduct education with good faculty governance that fulfills the principles of discipline, transparency, accountability, responsibility, and fairness.</li>
-          <li>To perform “Tri Dharma” higher education activities in order to produce graduates with both national and global competitiveness, honesty, integrity, and social responsibility.</li>
-          <li>To conduct the best in its class for Science &amp; Technology research and development as a part of increasing the nation’s level of competitiveness and human civilization.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- GOALS (same styling as Vision: image left, text right) -->
-    <section class="section-row">
-      <div class="section-image">
-        <img src="../media/facultybackground/background_eit.jpg"
-             alt="Goals image">
-      </div>
-
-      <div class="section-text">
-        <h2>Goals</h2>
-        <ol>
-          <li>To produce tenacious and tough graduates who possess balanced hard and soft skills.</li>
-          <li>To produce graduates with good character, integrity as well as technical, managerial, entrepreneurial, and leadership competence, thus able to be adaptable to environment changes.</li>
-          <li>To create scientific work for society and industry that is developed through good academic culture.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Staffs go here -->
-     <div class="staff-section">
-      <!-- Staff content will be added here in the future -->
-       <div class="lecturer-item">
-        <img class= "lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
-        <h3 class="lecturer-name">Joseph Andreas</h3>
-      </div>
-
-      <div class="lecturer-item">
-        <img class= "lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
-        <h3 class="lecturer-name">Joseph Andreas</h3>
-      </div>
-
-      <div class="lecturer-item">
-        <img class= "lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
-        <h3 class="lecturer-name">Joseph Andreas</h3>
-      </div>
-
-       <div class="staff-section">
-      <!-- Staff content will be added here in the future -->
-       <div class="lecturer-item">
-        <img class= "lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
-        <h3 class="lecturer-name">Joseph Andreas</h3>
-      </div>
-
-      <div class="lecturer-item">
-        <img class= "lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
-        <h3 class="lecturer-name">Joseph Andreas</h3>
-      </div>
-
-      <div class="lecturer-item">
-        <img class= "lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
-        <h3 class="lecturer-name">Joseph Andreas</h3>
-      </div>
-
+  <!-- VISION -->
+  <section class="section-row">
+    <div class="section-image">
+      <img src="../media/facultybackground/background_eit.jpg" alt="Lab photo">
     </div>
 
-    <!-- FOOTER -->
+    <div class="section-text">
+      <h2>Vision</h2>
+      <p>
+        Faculty of Engineering and IT (FEIT) to become the best education
+        institution that is superior in engineering and information technology
+        class with global competitiveness as well as integrity, learning culture,
+        and high social responsibility.
+      </p>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="section-row reverse">
+    <div class="section-image">
+      <img src="../media/facultybackground/background_eit.jpg" alt="Mission image">
+    </div>
+
+    <div class="section-text">
+      <h2>Mission</h2>
+      <ol>
+        <li>To conduct education with good faculty governance that fulfills the principles of discipline, transparency, accountability, responsibility, and fairness.</li>
+        <li>To perform “Tri Dharma” higher education activities in order to produce graduates with national and global competitiveness, honesty, integrity, and social responsibility.</li>
+        <li>To conduct leading research and development to support the nation’s competitiveness.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- GOALS -->
+  <section class="section-row">
+    <div class="section-image">
+      <img src="../media/facultybackground/background_eit.jpg" alt="Goals image">
+    </div>
+
+    <div class="section-text">
+      <h2>Goals</h2>
+      <ol>
+        <li>To produce tenacious graduates who possess balanced hard and soft skills.</li>
+        <li>To produce graduates with strong character, integrity, technical, managerial, entrepreneurial, and leadership competence.</li>
+        <li>To create scientific work developed through good academic culture.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROGRAM GRID -->
+  <section class="program-grid-section">
+    <h2 class="program-grid-title">FEIT Study Programs</h2>
+
+    <div class="program-grid">
+
+      <a href="mechatronics.html" class="program-card">
+        <div class="program-card-image-wrapper">
+          <img src="../media/feitprogram/mechatronics.webp" alt="Mechatronics Study Program">
+        </div>
+        <div class="program-card-label">Mechatronics</div>
+      </a>
+
+      <a href="informationtechnology.html" class="program-card">
+        <div class="program-card-image-wrapper">
+          <img src="../media/feitprogram/informationtechnology.webp" alt="Information Technology Study Program">
+        </div>
+        <div class="program-card-label">Information Technology</div>
+      </a>
+
+      <a href="cybersecurity.html" class="program-card">
+        <div class="program-card-image-wrapper">
+          <img src="../media/feitprogram/cybersecurity.webp" alt="Cybersecurity Study Program">
+        </div>
+        <div class="program-card-label">Cybersecurity</div>
+      </a>
+
+      <a href="industrialengineering.html" class="program-card">
+        <div class="program-card-image-wrapper">
+          <img src="../media/feitprogram/industrialengineering.webp" alt="Industrial Engineering Study Program">
+        </div>
+        <div class="program-card-label">Industrial Engineering</div>
+      </a>
+
+      <a href="smartindustry.html" class="program-card">
+        <div class="program-card-image-wrapper">
+          <img src="../media/feitprogram/smartindustry.webp" alt="Smart Industry Study Program">
+        </div>
+        <div class="program-card-label">Smart Industry</div>
+      </a>
+
+      <a href="aidatascience.html" class="program-card">
+        <div class="program-card-image-wrapper">
+          <img src="../media/feitprogram/aidatascience.webp" alt="AI & Data Science Study Program">
+        </div>
+        <div class="program-card-label">AI &amp; Data Science</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- STAFF -->
+  <div class="staff-section">
+    <div class="lecturer-item">
+      <img class="lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
+      <h3 class="lecturer-name">Joseph Andreas</h3>
+    </div>
+    <div class="lecturer-item">
+      <img class="lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
+      <h3 class="lecturer-name">Joseph Andreas</h3>
+    </div>
+    <div class="lecturer-item">
+      <img class="lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
+      <h3 class="lecturer-name">Joseph Andreas</h3>
+    </div>
+
+    <div class="staff-section">
+      <div class="lecturer-item">
+        <img class="lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
+        <h3 class="lecturer-name">Joseph Andreas</h3>
+      </div>
+      <div class="lecturer-item">
+        <img class="lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
+        <h3 class="lecturer-name">Joseph Andreas</h3>
+      </div>
+      <div class="lecturer-item">
+        <img class="lecturer-photo" src="../media/staffimage/staffjoseph.jpg" alt="Staff Photo">
+        <h3 class="lecturer-name">Joseph Andreas</h3>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- END page-wrapper -->
+
+<div class="event-section">
+  <h1>Upcoming Faculty Events</h1>
+  <div class="event-box">
+    <div class="event-item">
+      <h2 class="event-title">Explore the World of Cyber Security</h2>
+      <img class="event-photo" src="../media/eventimage/feitevent1.jpg" alt="event Photo">
+    </div>
+    <div class="event-item">
+      <h2 class="event-title">Explore the Future of UAVs</h2>
+      <img class="event-photo" src="../media/eventimage/feitevent2.jpg" alt="event Photo">
+    </div>
+    <div class="event-item">
+      <h2 class="event-title">Block Chain Technology</h2>
+      <img class="event-photo" src="../media/eventimage/feitevent3.jpeg" alt="event Photo">
+    </div>
+    <div class="event-item">
+      <h2 class="event-title">Colaborative Robot</h2>
+      <img class="event-photo" src="../media/eventimage/feitevent4.jpeg" alt="event Photo">
+    </div>
+  </div>
+</div>
+
 <footer class="site-footer">
+  <div class="footer-left">
+    <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
 
-    <div class="footer-left">
-        <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
-
-        <div class="footer-socials">
-            <a href="https://x.com/swissgermanuniv" target="_blank">
-                <img src="../media/x_logo.png" alt="Twitter">
-            </a>
-            <a href="https://www.instagram.com/swissgermanuniv" target="_blank">
-                <img src="../media/ig_logo.png" alt="Instagram">
-            </a>
-            <a href="https://www.youtube.com/@SwissGermanUniversityOfficial" target="_blank">
-                <img src="../media/yt_logo.png" alt="YouTube">
-            </a>
-        </div>
+    <div class="footer-socials">
+      <a href="https://x.com/swissgermanuniv" target="_blank">
+        <img src="../media/x_logo.png" alt="Twitter">
+      </a>
+      <a href="https://www.instagram.com/swissgermanuniv" target="_blank">
+        <img src="../media/ig_logo.png" alt="Instagram">
+      </a>
+      <a href="https://www.youtube.com/@SwissGermanUniversityOfficial" target="_blank">
+        <img src="../media/yt_logo.png" alt="YouTube">
+      </a>
     </div>
+  </div>
 
-    <div class="footer-map">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
-            width="100%" 
-            height="230" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-    </div>
-
+  <div class="footer-map">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
+      width="100%" 
+      height="230" 
+      style="border:0" 
+      allowfullscreen 
+      loading="lazy">
+    </iframe>
+  </div>
 </footer>
 
-    <!-- FOOTER END -->
 </body>
-
-
-
- 
 </html>
