@@ -6,7 +6,23 @@
     <link rel="stylesheet" href="../css/global.css">
     <title>Document</title>
     <style>
-  
+        .alumni-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .alumni-container-content {
+            padding-left: 90px;
+            padding-right: 90px;
+            border: solid 1px black;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        .alumni-container-content:first-child {
+            border-left: none;
+        }
     </style>
 </head>
 <body>
@@ -22,19 +38,31 @@
     </ul>
 </nav>
 
-<h1> Accomplishments </h1> 
-<a href="#"><img src="../media/EduRank.png" alt="EduRank Logo"></a>
-<h2>Alumni</h2>
-<p>Content goes here.</p>
-<h2> Awards </h2>
-<p>Content goes here.</p>
-
+<h1 class="heading-card"> Accomplishments </h1> 
+    <br>
+    <a class="centerMe"><img src="../media/EduRank.png" alt="EduRank Logo"></a>
+    <br>
+    <br>
+<div class="alumni-container">
+    <div class="alumni-container-content">
+    <h2 class="logo-title">
+        Alumni
+        <a href="https://alumni.sgu.ac.id/"><img src="../media/IKASGU.png" class="png-img" width="100"></a>
+    </h2>
+        <img src="../media/Alumni_Banner_1.jpg" width="500">
+        <p>Content goes here.</p>
+    </div>
+    <div class="alumni-container-content">
+    <h2> Awards </h2>
+    <img src="../media/Alumni_Banner_1.jpg" width="500">
+        <p>Content goes here.</p>
+    </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
     <div class="footer-left">
         <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
-
         <div class="footer-socials">
             <a href="https://x.com/swissgermanuniv" target="_blank">
                 <img src="../media/x_logo.png" alt="Twitter">

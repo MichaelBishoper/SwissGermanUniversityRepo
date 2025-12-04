@@ -78,7 +78,7 @@
         /* Section heading */
         .nav-section h2 {
             margin-top: 0;
-            font-family: Georgia, serif;
+            font-family: "Calibri";
         }
 
         /* List styling */
@@ -120,6 +120,110 @@
             width: 100%;
             height: 100%;
             display: block;
+        }
+
+        /* FULL-WIDTH SECTION WRAPPER */
+        .faculty-section {
+            width: 100%;
+            background: #ffffff;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        /* CONTENT AREA */
+        .faculty-container {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* CLICKABLE STACK ITEM */
+        .faculty-stack {
+            width: 30%;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column; /* image on top, bar below */
+        }
+
+        .faculty-image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+        }
+
+        /* Background image */
+        .faculty-image-wrapper .bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* Overlay tint */
+        .faculty-image-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 60, 140, 0.45);
+            opacity: 0.45;
+            transition: opacity 0.45s ease-in-out;;
+        }
+
+        /* Badge in the center */
+        .faculty-image-wrapper .badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        /* BLUE TEXT BAR UNDER IMAGE — ACCORDION STYLE */
+        .faculty-label-bar {
+            background: #314A9C;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+
+            /* accordion behavior */
+            max-height: 0;
+            padding: 0 0;            /* no padding when collapsed */
+            overflow: hidden;
+            opacity: 0;
+
+            transition:
+                max-height 0.3s ease,
+                padding 0.3s ease,
+                opacity 0.25s ease;
+        }
+
+        /* Remove global image borders in this area */
+        .faculty-image-wrapper img {
+            border: none !important;
+            padding: 0 !important;
+            background: none !important;
+        }
+
+        /* Hover animations */
+        .faculty-stack:hover .bg {
+            transform: scale(1.05);
+        }
+
+        .faculty-stack:hover .faculty-image-wrapper::before {
+            opacity: 0.65;
+        }
+
+        .faculty-stack:hover .faculty-label-bar {
+            max-height: 80px;      /* enough height for one line */
+            padding: 10px 0;       /* add vertical padding when expanded */
+            opacity: 1;
         }
     </style>
 </head>
@@ -168,7 +272,7 @@
     <div class="nav-block">
 
         <div class="nav-section">
-            <h2>Faculties</h2>
+            <h2><a href="#faculties-section">Faculties</a></h2>
             <ul>
                 <li><a href="#">Faculty of Engineering (FEIT) </a></li>
                 <li><a href="#">Faculty of Business & Communication (FBC) </a></li>
@@ -208,6 +312,47 @@
 <div class="centerMe">
     <img src="../media/PartnerUniversities.png" width="1640">
 </div>
+
+<h2 class="centerMe"> Faculties </h2>
+ <!-- FACULTY SECTION -->
+    <div class="faculty-section" id="faculties-section">
+        <div class="faculty-container">
+
+            <!-- STACK 1 -->
+            <a class="faculty-stack" href="eit.html">
+                <div class="faculty-image-wrapper">
+                    <img src="../media/facultybackground/background_eit.jpg" class="bg" alt="EIT Background">
+                    <img src="../media/facultybadge/logo_eit.png" class="badge" alt="EIT Logo">
+                </div>
+                <div class="faculty-label-bar">
+                    Faculty of Engineering &amp; IT
+                </div>
+            </a>
+
+            <!-- STACK 2 -->
+            <a class="faculty-stack" href="bc.html">
+                <div class="faculty-image-wrapper">
+                    <img src="../media/facultybackground/background_bc.jpg" class="bg" alt="BC Background">
+                    <img src="../media/facultybadge/logo_bc.png" class="badge" alt="BC Logo">
+                </div>
+                <div class="faculty-label-bar">
+                    Faculty of Business &amp; Communication
+                </div>
+            </a>
+
+            <!-- STACK 3 -->
+            <a class="faculty-stack" href="lst.html">
+                <div class="faculty-image-wrapper">
+                    <img src="../media/facultybackground/background_lst.jpg" class="bg" alt="LST Background">
+                    <img src="../media/facultybadge/logo_lst.png" class="badge" alt="LST Logo">
+                </div>
+                <div class="faculty-label-bar">
+                    Faculty of Life Sciences &amp; Technology
+                </div>
+            </a>
+
+        </div>
+    </div>
 
 <!-- FOOTER -->
 <footer class="site-footer">

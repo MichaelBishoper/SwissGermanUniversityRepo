@@ -4,7 +4,7 @@
 html, body {
     margin: 7px;
     padding: 0;
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: "Calibri";
     background-color: #dce3f0; /* light dusty blue */
     color: #1e2a3a;            /* dark desaturated blue */
     line-height: 1.6;
@@ -12,10 +12,18 @@ html, body {
 
 /* Headings with vintage serif style */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Garamond", "Georgia", serif;
+    font-family: "Calibri";
     color: #162032; /* deeper blue */
     margin-top: 1.2em;
     margin-bottom: 0.4em;
+}
+
+/* Heading with Bar */
+h1.heading-card {
+    background-color: #7462624d;
+    text-align: center;
+    color: black;
+    padding: 15px;
 }
 
 /* Hyperlinks with subtle vintage underline */
@@ -76,7 +84,7 @@ hr {
 /* NAVBAR STYLING */
 
 .main-nav {
-    background-color: #749ad7;
+    background-color: #00adf1;
     height: 60px;           
     display: flex;
     align-items: center;   
@@ -176,3 +184,8 @@ img.png-img {
   display: block;
 }
 
+.logo-title {
+    display: inline-flex;
+    align-items: center; 
+    gap: 10px;    
+}
