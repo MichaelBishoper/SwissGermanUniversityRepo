@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About SGU | Swiss German University</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Calibri", Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px 60px;
+            box-sizing: border-box;
+            background: #ffffff;
+        }
+
+        /* HERO */
+        .about-hero {
+            margin-top: 20px;
+            margin-bottom: 32px;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #008fd3;
+            color: #ffffff;
+            min-height: 220px;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .about-hero-image {
+            flex: 1.4;
+            background-image: url("../media/building/prominencesgu.jpg"); /* update path if needed */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-hero-content {
+            flex: 1.2;
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-hero-title {
+            font-size: 30px;
+            margin: 0 0 8px;
+            font-weight: 700;
+        }
+
+        .about-hero-tagline {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 14px;
+        }
+
+        .about-hero-meta {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* MAIN LAYOUT (content + sidebar) */
+        .about-layout {
+            display: flex;
+            gap: 32px;
+        }
+
+        .about-main {
+            flex: 3;
+        }
+
+        .profile-sidebar {
+            flex: 1.1;
+            max-width: 280px;
+        }
+
+        /* SIDEBAR */
+        .sidebar-card {
+            border: 1px solid #e0e4ef;
+            border-radius: 10px;
+            padding: 16px 0;
+            background: #fafbff;
+            position: sticky;
+            top: 90px;
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: 700;
+            padding: 0 18px 8px;
+            margin: 0 0 6px;
+            border-bottom: 1px solid #e0e4ef;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 8px 0 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin: 0;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 8px 18px;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
+        }
+
+        .sidebar-nav a:hover {
+            background: #008fd3;
+            color: #ffffff;
+            padding-left: 24px;
+        }
+
+        /* RECTOR CARD */
+        .rector-card {
+            display: flex;
+            gap: 24px;
+            padding: 24px 24px 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e6f0;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            margin-bottom: 32px;
+        }
+
+        .rector-photo-wrapper {
+            flex: 0 0 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rector-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #008fd3;
+            margin-bottom: 8px;
+        }
+
+        .rector-name {
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .rector-title {
+            font-size: 13px;
+            text-align: center;
+            color: #777;
+        }
+
+        .rector-message {
+            flex: 1;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .rector-quote-heading {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        /* KEY FACTS */
+        .key-facts-section {
+            margin-bottom: 36px;
+        }
+
+        .section-heading {
+            font-size: 22px;
+            margin: 0 0 12px;
+        }
+
+        .key-facts-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .key-fact-card {
+            padding: 16px 14px;
+            border-radius: 10px;
+            background: #f6f9ff;
+            border: 1px solid #e1e6f7;
+        }
+
+        .key-fact-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #0072b8;
+            margin-bottom: 4px;
+        }
+
+        .key-fact-value {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .key-fact-desc {
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* ALTERNATING ABOUT BLOCKS */
+        .about-block {
+            display: flex;
+            gap: 26px;
+            margin-bottom: 32px;
+            align-items: center;
+        }
+
+        .about-block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .about-block-image {
+            flex: 0 0 45%;
+        }
+
+        .about-block-image img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .about-block-text {
+            flex: 1;
+        }
+
+        .about-block-text h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .about-block-text p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* CAMPUS SECTION */
+        .campus-section {
+            margin: 40px 0 36px;
+            padding: 24px 24px 22px;
+            border-radius: 12px;
+            background: #f5fbff;
+            border: 1px solid #d4e6f7;
+        }
+
+        .campus-header {
+            margin-bottom: 16px;
+        }
+
+        .campus-header h2 {
+            margin: 0 0 4px;
+            font-size: 22px;
+        }
+
+        .campus-header p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .campus-layout {
+            display: flex;
+            gap: 22px;
+            margin-top: 16px;
+        }
+
+        .campus-photo {
+            flex: 0 0 45%;
+        }
+
+        .campus-photo img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .campus-map {
+            flex: 1;
+        }
+
+        .campus-map iframe {
+            width: 100%;
+            height: 260px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        /* HISTORY TIMELINE */
+        .history-section {
+            margin-bottom: 38px;
+        }
+
+        .history-timeline {
+            position: relative;
+            margin-top: 14px;
+            padding-left: 24px;
+        }
+
+        .history-timeline::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #d4deef;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 10px 0 10px 14px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -2px;
+            top: 18px;
+            width: 10px;
+            height: 10px;
+            background: #008fd3;
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-size: 14px;
+            font-weight: 700;
+            color: #008fd3;
+            margin-bottom: 4px;
+        }
+
+        .timeline-text {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* WHY CHOOSE SGU */
+        .why-sgu-section {
+            margin-bottom: 40px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .why-card {
+            padding: 16px 14px 14px;
+            border-radius: 10px;
+            background: #fafafa;
+            border: 1px solid #e2e2e2;
+        }
+
+        .why-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .why-text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 960px) {
+            .about-layout {
+                flex-direction: column;
+            }
+
+            .profile-sidebar {
+                max-width: none;
+            }
+
+            .sidebar-card {
+                position: static;
+            }
+
+            .key-facts-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .about-block,
+            .about-block.reverse,
+            .campus-layout {
+                flex-direction: column;
+            }
+
+            .about-block-image,
+            .campus-photo {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 0 12px 40px;
+            }
+
+            .about-hero {
+                flex-direction: column;
+            }
+
+            .about-hero-content {
+                padding: 20px 18px;
+            }
+
+            .about-hero-title {
+                font-size: 26px;
+            }
+
+            .key-facts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="mainpage.html"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
+            </li>
+            <li class="nav-item"><a href="#">About</a></li>
+            <li class="nav-item"><a href="programs.html">Programs</a></li>
+            <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
+            <li class="nav-item"><a href="events.html">Events</a></li>
+            <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-wrapper">
+
+        <!-- HERO -->
+        <section class="about-hero">
+            <div class="about-hero-image"></div>
+            <div class="about-hero-content">
+                <h1 class="about-hero-title">SGU at a Glance</h1>
+                <p class="about-hero-tagline">
+                    Swiss German University (SGU) is Indonesia’s first international university with strong European connections,
+                    combining academic excellence, industry collaboration, and a modern campus in Alam Sutera.
+                </p>
+                <p class="about-hero-meta">
+                    Established in 2000 • International bachelor and master programs • Jointly initiated by Indonesia, Germany, Switzerland, and Austria
+                </p>
+            </div>
+        </section>
+
+        <!-- MAIN LAYOUT -->
+        <div class="about-layout">
+            <!-- LEFT: MAIN CONTENT -->
+            <main class="about-main">
+
+                <!-- RECTOR MESSAGE -->
+                <section id="rector" class="rector-card">
+                    <div class="rector-photo-wrapper">
+                        <img src="../media/Rector Samuel.webp" alt="Rector Photo" class="rector-photo">
+                        <div class="rector-name">Dr. Dipl.-Ing. Samuel P. Kusumocahyo</div>
+                        <div class="rector-title">Rector, Swiss German University</div>
+                    </div>
+                    <div class="rector-message">
+                        <div class="rector-quote-heading">Welcome to Swiss German University.</div>
+                        <p>
+                            From its humble beginning in 2000, SGU has grown into a pioneering international university in Indonesia,
+                            recognized for its strong European partnerships and practice-oriented learning culture. Our commitment is
+                            to develop graduates whose knowledge, experience, and character are ready for the demands of a global career.
+                        </p>
+                        <p>
+                            At SGU, students learn in small classes, work closely with lecturers who have industry backgrounds,
+                            and gain real experience through internships and collaborative projects. We invite you to discover how
+                            SGU can be your gateway to global success.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- KEY FACTS -->
+                <section id="facts" class="key-facts-section">
+                    <h2 class="section-heading">Key Facts about SGU</h2>
+                    <div class="key-facts-grid">
+                        <div class="key-fact-card">
+                            <div class="key-fact-label">Programs</div>
+                            <div class="key-fact-value">17 + 6</div>
+                            <div class="key-fact-desc">17 Bachelor’s and 6 Master’s programs across Engineering, IT, Business, and Life Sciences.</div>
+                        </div>
+                        <div class="key-fact-card">
+                            <div class="key-fact-label">International Partners</div>
+                            <div class="key-fact-value">26+</div>
+                            <div class="key-fact-desc">Partner universities and institutions in Germany, Switzerland, Austria, and other countries.</div>
+                        </div>
+                        <div class="key-fact-card">
+                            <div class="key-fact-label">Industry Focus</div>
+                            <div class="key-fact-value">2 Internships</div>
+                            <div class="key-fact-desc">Students complete compulsory internships, often including international placement.</div>
+                        </div>
+                        <div class="key-fact-card">
+                            <div class="key-fact-label">Language</div>
+                            <div class="key-fact-value">English</div>
+                            <div class="key-fact-desc">English is used as the main medium of instruction across programs.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ABOUT BLOCKS -->
+                <section id="our-mission">
+
+                    <div class="about-block">
+                        <div class="about-block-image">
+                            <img src="../media/facultybackground/background_bc.jpg" alt="SGU Students">
+                        </div>
+                        <div class="about-block-text">
+                            <h3>International Approach & Modern Study Programs</h3>
+                            <p>
+                                SGU offers modern study programs with an international approach that combine theory, practice, and global exposure.
+                                Through cooperation with European universities and industry partners, students gain access to up-to-date technology,
+                                curriculum, and professional networks that prepare them for careers around the world.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-block reverse">
+                        <div class="about-block-image">
+                            <img src="../media/facultybackground/background_lst.jpg" alt="Collaboration and Innovation">
+                        </div>
+                        <div class="about-block-text">
+                            <h3>Collaboration, Entrepreneurship, and Innovation</h3>
+                            <p>
+                                SGU encourages a culture of collaboration and entrepreneurship. Students work on projects that solve real-world
+                                challenges and are supported by lecturers who bring industry experience into the classroom. Our goal is to build
+                                graduates who are innovative, disciplined, and ready to contribute responsibly to society.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-block">
+                        <div class="about-block-image">
+                            <img src="../media/about-media/exchangestudents.jpg" alt="Learning Environment">
+                        </div>
+                        <div class="about-block-text">
+                            <h3>A Multicultural Learning Environment</h3>
+                            <p>
+                                Located in Alam Sutera, SGU brings together students and staff from diverse cultural and professional backgrounds.
+                                This creates a dynamic learning environment where ideas are exchanged freely and global perspectives are developed,
+                                helping students grow both academically and personally.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CAMPUS & LOCATION -->
+                <section id="campus" class="campus-section">
+                    <div class="campus-header">
+                        <h2>Our Campus in Alam Sutera</h2>
+                        <p>
+                            SGU is located at The Prominence Tower, Alam Sutera — a modern business and lifestyle district in Tangerang, Indonesia.
+                            The area provides easy access, supporting facilities, and a safe environment for students.
+                        </p>
+                    </div>
+
+                    <div class="campus-layout">
+                        <div class="campus-photo">
+                            <img src="../media/building/randomahhpeople.jpeg" alt="The Prominence Tower Alam Sutera">
+                        </div>
+                        <div class="campus-map">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- HISTORY TIMELINE -->
+                <section id="history" class="history-section">
+                    <h2 class="section-heading">History of Swiss German University</h2>
+                    <div class="history-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2000</div>
+                            <div class="timeline-text">
+                                SGU was established as the first international university in Indonesia with an academic license
+                                recognized under Indonesian law, initiated through cooperation between Indonesia, Germany, Switzerland, and Austria.
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2000–2010</div>
+                            <div class="timeline-text">
+                                SGU expanded its study programs in Engineering, Information Technology, Business, and Life Sciences,
+                                building strong partnerships with European universities and industry.
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2010–2020</div>
+                            <div class="timeline-text">
+                                The university strengthened its internship programs, international collaborations, and research activities,
+                                producing graduates who are competitive both nationally and internationally.
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">Today</div>
+                            <div class="timeline-text">
+                                SGU continues to innovate with modern curricula, digital learning initiatives, and deeper collaboration
+                                with industry partners, while maintaining its focus on character, integrity, and social responsibility.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WHY SGU -->
+                <section id="why-sgu" class="why-sgu-section">
+                    <h2 class="section-heading">Why Choose SGU?</h2>
+                    <div class="why-grid">
+                        <div class="why-card">
+                            <div class="why-title">European-Linked Curriculum</div>
+                            <div class="why-text">
+                                Programs are developed with European partner universities, ensuring international standards and up-to-date content.
+                            </div>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-title">Strong Industry Connection</div>
+                            <div class="why-text">
+                                Close collaboration with companies and institutions provides real projects, guest lectures, and internship opportunities.
+                            </div>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-title">Practice-Oriented Learning</div>
+                            <div class="why-text">
+                                Laboratory work, case studies, and applied projects help students connect theory with real applications.
+                            </div>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-title">Multicultural Environment</div>
+                            <div class="why-text">
+                                Students learn in an international community with diverse cultural backgrounds, building global perspectives.
+                            </div>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-title">Modern Campus Location</div>
+                            <div class="why-text">
+                                The Prominence Tower in Alam Sutera offers a modern, safe, and accessible environment with supporting facilities.
+                            </div>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-title">Character & Integrity</div>
+                            <div class="why-text">
+                                Beyond academic skills, SGU emphasizes integrity, discipline, and social responsibility as core values.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- RIGHT: SIDEBAR -->
+            <aside class="profile-sidebar">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">Profile</h3>
+                    <ul class="sidebar-nav">
+                        <li><a href="#rector">Overview</a></li>
+                        <li><a href="#facts">Key Facts</a></li>
+                        <li><a href="#our-mission">Our Mission</a></li>
+                        <li><a href="#campus">Our Campus</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#why-sgu">Why SGU?</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-left">
+            <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
+
+            <div class="footer-socials">
+                <a href="https://x.com/swissgermanuniv" target="_blank">
+                    <img src="../media/x_logo.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/swissgermanuniv" target="_blank">
+                    <img src="../media/ig_logo.png" alt="Instagram">
+                </a>
+                <a href="https://www.youtube.com/@SwissGermanUniversityOfficial" target="_blank">
+                    <img src="../media/yt_logo.png" alt="YouTube">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
+                width="100%" 
+                height="230" 
+                style="border:0;" 
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+        </div>
+    </footer>
+</body>
+</html>
