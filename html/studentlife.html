@@ -88,6 +88,60 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* CALENDAR */
+            .viewer-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        /* BUTTON AREA */
+        .viewer-buttons {
+            margin-bottom: 15px;
+        }
+
+        .viewer-buttons label {
+            padding: 8px 15px;
+            border: 1px solid #888;
+            cursor: pointer;
+            margin: 0 5px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        /* HIDE RADIOS (inputs are now direct children of viewer-container) */
+        .viewer-container > input {
+            display: none;
+        }
+
+        /* STYLE LABEL WHEN RADIO IS CHECKED */
+        #odd:checked + .viewer-buttons label[for="odd"],
+        #even:checked + .viewer-buttons + .viewer-buttons label[for="even"] {
+            background: #333;
+            color: white;
+        }
+
+        /* IMAGE AREA */
+        .viewer-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        /* Show selected image */
+        #odd:checked ~ .viewer-image .odd-img {
+            display: block;
+        }
+
+        #even:checked ~ .viewer-image .even-img {
+            display: block;
+        }
+
+
     </style>
 </head>
 <body>
@@ -199,40 +253,49 @@
 
     <tr>
         <td class="col-left">
-            <a href="#">Alumni</a>
+            <a href="https://transjakarta.co.id/rute">Public Transport</a>
         </td>
         <td class="col-right">
-            Our list of success stories and great alumni.
+            For students with domiciles in Jakarta, Transjakarta routes S11 and S61 run here.
         </td>
     </tr>
 
     <tr>
         <td class="col-left">
-            <a href="#">Double Degree and Internships</a>
+            <a href="#">Student Memberships</a>
         </td>
         <td class="col-right">
-            Internship and Double Degree information.
+            Students can get good deals for things like: Gym Memberships, Sports Centre Memberships or Parking Memberships.
         </td>
     </tr>
 
     <tr>
         <td class="col-left">
-            <a href="https://sgu.ac.id/id/admission/international/exchange-programme/">International Students Exchange Program</a>
+            <a href="">IMPORTANT: Free Servicces</a>
         </td>
         <td class="col-right">
-            For more information regarding international students, follow the steps in the link.
-        </td>
-    </tr>
-
-    <tr>
-        <td class="col-left">
-            <a href="studentlife.html">Student Accomodations</a>
-        </td>
-        <td class="col-right">
-            Internship and Double Degree information.
+            Services like Canva Pro, Figma Student and Guthub Copilot. 
         </td>
     </tr>
 </table>
+
+<h2 class="centerMe">Academic Calendar</h2>
+
+<div class="viewer-container">
+    <input type="radio" id="odd" name="cal" checked>
+    <input type="radio" id="even" name="cal">
+
+    <div class="viewer-buttons">
+        <label for="odd">Odd Calendar</label>
+        <label for="even">Even Calendar</label>
+    </div>
+
+    <div class="viewer-image">
+        <img src="../media/CalendarBachelorOdd.png" class="odd-img">
+        <img src="../media/CalendarBachelorEven.png" class="even-img">
+    </div>
+
+</div>
 
 <!-- FOOTER -->
 <footer class="site-footer">

@@ -209,3 +209,25 @@ img.png-img {
     align-items: center; 
     gap: 10px;    
 }
+
+/* MOHON PERHATIANNYA PARA PENUMPANG TRANSJAKARTA */
+.transport-scroll {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    position: relative;
+}
+
+.transport-scroll span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: busScroll 10s linear infinite;
+}
+
+@keyframes busScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
