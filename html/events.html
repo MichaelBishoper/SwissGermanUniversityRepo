@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events | Swiss German University</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Calibri", Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 16px 60px;
+            box-sizing: border-box;
+            background: #ffffff;
+        }
+
+        /* HEADER / INTRO */
+        .events-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .events-header h1 {
+            margin: 0 0 8px;
+            font-size: 28px;
+        }
+
+        .events-header p {
+            margin: 0;
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* FILTER BAR */
+        .events-filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 28px 0 24px;
+        }
+
+        .filter-btn {
+            border: 1px solid #314A9C;
+            background: #ffffff;
+            color: #314A9C;
+            border-radius: 999px;
+            padding: 8px 18px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .filter-btn.active {
+            background: #314A9C;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .filter-btn:hover {
+            background: #314A9C;
+            color: #ffffff;
+        }
+
+        /* EVENTS LAYOUT */
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .events-month-separator {
+            margin: 24px 0 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #777;
+        }
+
+        .event-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e6f0;
+            background: #fafbff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            align-items: flex-start;
+        }
+
+        /* DATE BADGE */
+        .event-date {
+            flex: 0 0 72px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #314A9C;
+            color: #ffffff;
+            padding: 8px 6px;
+        }
+
+        .event-date-month {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .event-date-day {
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .event-date-year {
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        /* MAIN CONTENT BLOCK */
+        .event-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .event-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+
+        /* ROW BELOW TITLE: IMAGE (LEFT) + TEXT (RIGHT) */
+        .event-content-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .event-image {
+            width: 263px;
+            height: 263px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .event-text-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .event-meta {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .event-description {
+            font-size: 14px;
+            color: #444;
+        }
+
+        .event-tags {
+            display: flex;
+            gap: 6px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+
+        .event-tag {
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: #e9edf7;
+            font-size: 11px;
+            color: #4b5575;
+        }
+
+        .event-link {
+            margin-top: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #314A9C;
+            text-decoration: none;
+        }
+
+        .event-link:hover {
+            text-decoration: underline;
+        }
+
+        /* STATUS COLORS */
+        .event-status-chip {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .status-upcoming { background: #e5f5ff; color: #0d63a5; }
+        .status-ongoing { background: #e7f8ea; color: #1d7a36; }
+        .status-past { background: #f1f1f5; color: #787d8a; }
+
+        /* STATUS BORDER TINTS */
+        .event-card[data-status="ongoing"] { border-color: #c2e5cc; background: #f7fff8; }
+        .event-card[data-status="upcoming"] { border-color: #c4ddf4; background: #f8fbff; }
+        .event-card[data-status="past"] { opacity: 0.82; }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+            .event-content-row {
+                flex-direction: column;
+            }
+            .event-image {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="mainpage.html"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
+            </li>
+            <li class="nav-item"><a href="about.html">About</a></li>
+            <li class="nav-item"><a href="programs.html">Programs</a></li>
+            <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
+            <li class="nav-item"><a href="#">Events</a></li>
+            <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="events-header">
+            <h1>Faculty Events & Activities</h1>
+            <p>Browse past, ongoing, and upcoming events from SGU.</p>
+        </header>
+
+        <!-- FILTER BAR -->
+        <div class="events-filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+            <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+            <button class="filter-btn" data-filter="past">Past</button>
+        </div>
+
+        <!-- EVENTS LIST -->
+        <section class="events-list">
+
+            <!-- MONTH -->
+            <div class="events-month-separator">December 2025</div>
+
+            <!-- EVENT 1 — ONGOING -->
+            <article class="event-card" data-status="ongoing">
+                <div class="event-date">
+                    <div class="event-date-month">Dec</div>
+                    <div class="event-date-day">06</div>
+                    <div class="event-date-year">2025</div>
+                </div>
+
+                <div class="event-main">
+                    <span class="event-status-chip status-ongoing">Ongoing</span>
+                    <h2 class="event-title">Explore the World of Cyber Security</h2>
+
+                    <div class="event-content-row">
+                        <img src="../media/eventimage/feitevent1.jpg" class="event-image" alt="Cybersecurity Event">
+
+                        <div class="event-text-column">
+                            <div class="event-meta">FEIT • Lab 501 • 09:00–16:00 WIB</div>
+                            <p class="event-description">
+                                Hands-on workshop introducing penetration testing, blue-team monitoring,
+                                and basic incident response using modern tools.
+                            </p>
+
+                            <div class="event-tags">
+                                <span class="event-tag">Cybersecurity</span>
+                                <span class="event-tag">Workshop</span>
+                                <span class="event-tag">On-campus</span>
+                            </div>
+
+                            <a href="#" class="event-link">View details →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- EVENT 2 — UPCOMING -->
+            <article class="event-card" data-status="upcoming">
+                <div class="event-date">
+                    <div class="event-date-month">Dec</div>
+                    <div class="event-date-day">12</div>
+                    <div class="event-date-year">2025</div>
+                </div>
+
+                <div class="event-main">
+                    <span class="event-status-chip status-upcoming">Upcoming</span>
+                    <h2 class="event-title">Future of UAVs & Autonomous Systems</h2>
+
+                    <div class="event-content-row">
+                        <img src="../media/eventimage/feitevent2.jpg" class="event-image" alt="UAV Event">
+
+                        <div class="event-text-column">
+                            <div class="event-meta">FEIT • Auditorium • 13:00–17:00 WIB</div>
+                            <p class="event-description">
+                                Guest lecture and exhibition on unmanned aerial vehicles, drone regulations,
+                                and engineering applications.
+                            </p>
+
+                            <div class="event-tags">
+                                <span class="event-tag">Mechatronics</span>
+                                <span class="event-tag">Guest Lecture</span>
+                            </div>
+
+                            <a href="#" class="event-link">Register now →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- EVENT 3 — UPCOMING -->
+            <article class="event-card" data-status="upcoming">
+                <div class="event-date">
+                    <div class="event-date-month">Jan</div>
+                    <div class="event-date-day">15</div>
+                    <div class="event-date-year">2026</div>
+                </div>
+
+                <div class="event-main">
+                    <span class="event-status-chip status-upcoming">Upcoming</span>
+                    <h2 class="event-title">Blockchain & Smart Contracts Bootcamp</h2>
+
+                    <div class="event-content-row">
+                        <img src="../media/eventimage/feitevent3.jpeg" class="event-image" alt="Blockchain Event">
+
+                        <div class="event-text-column">
+                            <div class="event-meta">FEIT & BC • Hybrid • 10:00–17:00 WIB</div>
+                            <p class="event-description">
+                                A one-day intensive bootcamp covering blockchain fundamentals,
+                                smart contracts, and industry applications.
+                            </p>
+
+                            <div class="event-tags">
+                                <span class="event-tag">Blockchain</span>
+                                <span class="event-tag">Hybrid</span>
+                            </div>
+
+                            <a href="#" class="event-link">View syllabus →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- MONTH -->
+            <div class="events-month-separator">November 2025</div>
+
+            <!-- EVENT 4 — PAST -->
+            <article class="event-card" data-status="past">
+                <div class="event-date">
+                    <div class="event-date-month">Nov</div>
+                    <div class="event-date-day">20</div>
+                    <div class="event-date-year">2025</div>
+                </div>
+
+                <div class="event-main">
+                    <span class="event-status-chip status-past">Past</span>
+                    <h2 class="event-title">Collaborative Robot & Industry 4.0 Showcase</h2>
+
+                    <div class="event-content-row">
+                        <img src="../media/eventimage/feitevent4.jpeg" class="event-image" alt="Robot Event">
+
+                        <div class="event-text-column">
+                            <div class="event-meta">FEIT • Robotics Lab • 10:00–15:00 WIB</div>
+                            <p class="event-description">
+                                Demonstration of collaborative robots (cobots) in smart manufacturing cells,
+                                featuring engineering student projects.
+                            </p>
+
+                            <div class="event-tags">
+                                <span class="event-tag">Robotics</span>
+                                <span class="event-tag">Showcase</span>
+                            </div>
+
+                            <a href="#" class="event-link">View recap →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+  <div class="footer-left">
+    <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
+
+    <div class="footer-socials">
+      <a href="https://x.com/swissgermanuniv" target="_blank">
+        <img src="../media/x_logo.png" alt="Twitter">
+      </a>
+      <a href="https://www.instagram.com/swissgermanuniv" target="_blank">
+        <img src="../media/ig_logo.png" alt="Instagram">
+      </a>
+      <a href="https://www.youtube.com/@SwissGermanUniversityOfficial" target="_blank">
+        <img src="../media/yt_logo.png" alt="YouTube">
+      </a>
+    </div>
+    <div style="display: flex; gap: 20px;">
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Contact</a></p>
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Email</a></p>
+            <p><a href="parents.html">For Parents</a></p>
+    </div>
+  </div>
+
+  <div class="footer-map">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
+      width="100%" 
+      height="230" 
+      style="border:0" 
+      allowfullscreen 
+      loading="lazy">
+    </iframe>
+  </div>
+</footer>
+
+    <!-- SIMPLE FILTER SCRIPT -->
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const eventCards = document.querySelectorAll('.event-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                eventCards.forEach(card => {
+                    const status = card.getAttribute('data-status');
+                    card.style.display =
+                        (filter === 'all' || status === filter) ? 'flex' : 'none';
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
