@@ -120,7 +120,10 @@ hr {
     color: black;
     padding: 8px 16px;
     text-decoration: none;
+    transition: color 0.3s ease-in;
 }
+
+
 
 /* Hover effect */
 .nav-item a:hover {
@@ -128,7 +131,17 @@ hr {
     color: white;
 }
 
-
+.nav-item:nth-of-type(1) a {
+    background-color: none;
+    background: none;
+    transition: transform 0.3s ease-in-out;
+}
+/* So SGU logo doesn't change color */
+.nav-item:nth-of-type(1) a:hover {
+    background-color: none;
+    background: none;
+    transform: scale(1.22);
+}
 
 /* FOOTER STYLING */
 
