@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your major quiz</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+
+    .quiz-container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+
+    .question {
+        margin: 20px 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .options label {
+        display: block;
+        background: #e8ecf7;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .options label:hover {
+        background: #d5ddf1;
+    }
+
+    #result {
+        margin-top: 25px;
+        padding: 15px;
+        background: #eef1ff;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        display: none;
+    }
+
+    .shelby-container h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center ;
+    }
+</style>
+</head>
+<body>
+    <!-- HEADER -->
+<nav class="main-nav">
+    <ul class="nav-list">
+        <li class="nav-item">
+            <a href="mainpage.html"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
+        </li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="programs.html">Programs</a></li>
+        <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
+        <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
+    </ul>
+</nav>
+<br>
+<hr>
+<div class="quiz-container">
+    <div class="shelby-container">
+    <h2>
+        What's Your Major? (Faculty)
+        <img class="png-img" src="../media/Shelby.png" height="130px" width="auto">
+    </h2>
+    </div>
+
+    <!-- Q1 -->
+    <div class="question">1. Which philosophy do you identify the most with?</div>
+    <div class="options">
+        <label><input type="radio" name="q1" value="engineering"> Stirner's Egoism </label>
+        <label><input type="radio" name="q1" value="business"> Nietzsche's Perspectivism </label>
+        <label><input type="radio" name="q1" value="it"> Marx's Critiques on Capitalism </label>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question">2. If you were to be chased by an animal which animal would you prefer?</div>
+    <div class="options">
+        <label><input type="radio" name="q2" value="engineering"> Polar Bear </label>
+        <label><input type="radio" name="q2" value="business"> Orangutan </label>
+        <label><input type="radio" name="q2" value="it"> Vulture </label>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question">3. Which of these qualities would you consider to be "good" in someone?</div>
+    <div class="options">
+        <label><input type="radio" name="q3" value="engineering"> Overweight </label>
+        <label><input type="radio" name="q3" value="business"> Overconfident </label>
+        <label><input type="radio" name="q3" value="it"> Overaggresive </label>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question">4. Do you hate Sean from IT Semester 3?</div>
+    <div class="options">
+        <label><input type="radio" name="q4" value="engineering"> Yes (Alot) </label>
+        <label><input type="radio" name="q4" value="business"> Yes (Somewhat) </label>
+        <label><input type="radio" name="q4" value="it"> Yes (Uncertain) </label>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question">5. Which game will win GOTY 2025?</div>
+    <div class="options">
+        <label><input type="radio" name="q5" value="engineering"> Expedition 33 </label>
+        <label><input type="radio" name="q5" value="it"> Hollow Knight Silksong </label>
+        <label><input type="radio" name="q5" value="business"> Hades II </label>
+    </div>
+    <br>
+    <button onclick="calculateMajor()">Get My Major</button>
+
+    <div id="result"></div>
+</div>
+<hr>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="footer-left">
+        <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
+
+        <div class="footer-socials">
+            <a href="https://x.com/swissgermanuniv" target="_blank">
+                <img src="../media/x_logo.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/swissgermanuniv" target="_blank">
+                <img src="../media/ig_logo.png" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@SwissGermanUniversityOfficial" target="_blank">
+                <img src="../media/yt_logo.png" alt="YouTube">
+            </a>
+        </div>
+        <div style="display: flex; gap: 20px;">
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Contact</a></p>
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Email</a></p>
+            <p><a href="parents.html">For Parents</a></p>
+        </div>
+    </div>
+
+    <div class="footer-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
+            width="100%" 
+            height="230" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+    
+</footer>
+<script>
+function calculateMajor() {
+    const answers = [
+        document.querySelector('input[name="q1"]:checked'),
+        document.querySelector('input[name="q2"]:checked'),
+        document.querySelector('input[name="q3"]:checked'),
+        document.querySelector('input[name="q4"]:checked'),
+        document.querySelector('input[name="q5"]:checked')
+    ];
+
+    // Prevent submission if unanswered
+    if (answers.includes(null)) {
+        alert("Please answer all questions!");
+        return;
+    }
+
+    // Count selected majors
+    let scores = { engineering: 0, business: 0, it: 0 };
+
+    answers.forEach(a => {
+        scores[a.value]++;
+    });
+
+    // Determine highest-scoring major
+    let major = Object.keys(scores).reduce((a, b) =>
+        scores[a] > scores[b] ? a : b
+    );
+
+    let resultText = "";
+
+    // Placeholder majors
+    if (major === "engineering") {
+        resultText = "Your matched faculty is: <a href='feit.html'><b>Life Sciences</b></a>";
+    } else if (major === "business") {
+        resultText = "Your matched faculty is: <a href='feit.html'><b>Business</b></a>";
+    } else if (major === "it") {
+        resultText = "Your matched faculty is: <a href='feit.html'><b>Engineering</b></a>";
+    }
+
+    // Show result
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = resultText;
+    resultDiv.style.display = "block";
+
+     // --- RESET SECTION ---
+    document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+
+    setTimeout(() => {
+        resultDiv.style.display = "none";
+    }, 7500);
+}
+</script>
+</body>
+</html>
