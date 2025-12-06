@@ -3,64 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parents Information</title>
+    <title>Student Life</title>
     <link rel="stylesheet" href="../css/global.css">
     <style>
-        .two-col-section {
-            max-width: 900px;
-            margin: 20px auto;
-            font-family: sans-serif;
+        .screensaver {
+            position: relative;
+            width: 40%;
+            height: 300px;
+            background: #000000;
+            overflow: hidden;
+            border: 2px solid #444;
+            margin: 0 auto;
         }
 
-        .two-col-container {
+        .logo {
+            position: absolute;
+            width: 120px;
+            height: 60px;
+            background: #4fc3ff;
+            border: 2px solid white;
+            animation: bounce 5s linear infinite alternate,
+                    bounce2 7s linear infinite alternate;
+        }
+
+        .logo {
+            background: url('../media/BEM.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* horizontal movement */
+        @keyframes bounce {
+            from { left: 0; }
+            to { left: calc(100% - 120px); }
+        }
+
+        /* vertical movement */
+        @keyframes bounce2 {
+            from { top: 0; }
+            to { top: calc(100% - 60px); }
+        }
+
+        .box-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            align-items: center;
+            padding: 20px;
         }
 
-        .two-col-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            background: #ddd;
+        .box-item {
+            background: #f5f8ff;
+            border: 2px solid #6b7c99;
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .box-item:hover {
+            transform: scale(1.03);
+        }
+
+        .box-item img {
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
             border: none;
-             margin-left: -100px;    
         }
 
-        .two-col-text p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 0;
+        .box-item p {
+            margin-top: 10px;
+            font-size: 15px;
         }
 
-        /* Responsive for mobile */
-        @media (max-width: 700px) {
-            .two-col-container {
-                grid-template-columns: 1fr;
+        /* Responsive */
+        @media (max-width: 900px) {
+            .box-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-
-        .centerMe button {
-            width: 200%;
-            height: 150%;
-            background-color: rgb(180, 28, 28);
-            transition: transform 0.3s ease-in;
-        }
-
-        .centerMe button:hover {
-            transform: scale(1.01);
-        }
-
-        .centerMe button a {
-            color: rgb(255, 255, 255);
-            font-weight: bold;
+        @media (max-width: 600px) {
+            .box-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-
-<!-- HEADER -->
+    <!-- HEADER -->
 <nav class="main-nav">
     <ul class="nav-list">
         <li class="nav-item">
@@ -73,22 +104,60 @@
     </ul>
 </nav>
 
-<h1 class="heading-card">Parent Information</h1>
-<div class="two-col-section">
- <div class="two-col-container">
-        <div class="two-col-image">
-            <img src="../media/StudentsStanding.png" alt="Placeholder Image">
-        </div>
+<h1 class="heading-card">Student Life</h1>
+<br>
+<div class="screensaver">
+    <div class="logo"></div>
+</div>
 
-        <div class="two-col-text">
-            <p>
-                - We are commited to provide your kids with the best education we can provide. But to get started, you might want to look at what we have in store.
-                <br>
-                - In the table below are some of the most important information that parents of new students might need.
-            </p>
-        </div>
+<h2 class="centerMe"> Student Organizations </h2>
+
+<div class="box-grid">
+
+    <div class="box-item">
+        <a href="https://www.instagram.com/bem.sgu/">
+            <img src="../media/BEM.png" alt="Placeholder">
+        </a>
+        <p>Badan Eksekutif Mahasiswa SGU (Student Body)</p>
+    </div>
+
+    <div class="box-item">
+        <a href="https://www.instagram.com/mpm.sgu/">
+            <img src="../media/MPM.png" alt="Placeholder">
+        </a>
+        <p>Majelis Permusyawaratan Mahasiswa (Student Assembly)</p>
+    </div>
+
+    <div class="box-item">
+        <a href="https://www.instagram.com/sgu.orbit/">
+            <img src="../media/ORBIT.png" alt="Placeholder">
+        </a>
+        <p>ORBIT</p>
+    </div>
+
+    <div class="box-item">
+        <a href="https://www.instagram.com/mechatronics.sgu/">
+            <img src="../media/MT.png" alt="Placeholder">
+        </a>
+        <p>Mechatronics</p>
+    </div>
+
+    <div class="box-item">
+        <a href="https://www.instagram.com/lstfacultysgu">
+            <img src="../media/LSTFac.png" alt="Placeholder">
+        </a>
+        <p>Life Science Technology Faculty</p>
+    </div>
+
+    <div class="box-item">
+        <a href="https://www.instagram.com/sgu_biblefellowship/">
+            <img src="../media/BF.png" alt="Placeholder">
+        </a>
+        <p>Propaganda Club</p>
     </div>
 </div>
+
+<h2 class="centerMe">Student Accomodations</h2>
 
 <table class="link-table">
     <style>
@@ -121,10 +190,10 @@
 
     <tr>
         <td class="col-left">
-            <a href="programs.html">Tuition Fee</a>
+            <a href="https://sgu.ac.id/wp-content/uploads/2024/10/Student-Handbook-2024.pdf">Student Handbook</a>
         </td>
         <td class="col-right">
-            The tuition fees for both bachelor's and master's degree programs can be found here.
+            The official 2024 student handbook.
         </td>
     </tr>
 
@@ -165,11 +234,6 @@
     </tr>
 </table>
 
-<div class="centerMe">
-    <button><a href="https://api.whatsapp.com/send?phone=628118010600">Contact for Registration</a></button>
-</div>
-
-
 <!-- FOOTER -->
 <footer class="site-footer">
 
@@ -190,7 +254,7 @@
         <div style="display: flex; gap: 20px;">
             <p><a href="https://api.whatsapp.com/send?phone=628118010600">Contact</a></p>
             <p><a href="https://api.whatsapp.com/send?phone=628118010600">Email</a></p>
-            <p><a href="#">For Parents</a></p>
+            <p><a href="parents.html">For Parents</a></p>
         </div>
     </div>
 

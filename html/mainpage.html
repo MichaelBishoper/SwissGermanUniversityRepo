@@ -115,12 +115,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: none;
+            background: none;
         }
 
         .whatsapp-float img {
             width: 100%;
             height: 100%;
             display: block;
+            border: none;
+            background-color: none;
+            background: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .whatsapp-float img:hover {
+            transform: scale(1.3);
         }
 
         /* FULL-WIDTH SECTION WRAPPER */
@@ -226,6 +236,69 @@
             padding: 10px 0;       /* add vertical padding when expanded */
             opacity: 1;
         }
+
+          .feature-box {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            font-family: sans-serif;
+        }
+
+        .feature-item {
+            border: 1px solid #3d3cad;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .feature-header {
+            display: grid;
+            grid-template-columns: 1fr 40px;
+            align-items: center;
+            padding: 12px;
+            cursor: pointer;
+            background: #f5f7fb;
+        }
+
+        .feature-header:hover {
+            background: #e9edf5;
+        }
+
+        .feature-title {
+            font-weight: bold;
+        }
+
+        .tick {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .feature-content {
+            display: none;
+            padding: 10px 12px;
+            background: #6fa9f0;
+            border-top: 1px solid #000000;
+        }
+
+        .arrow {
+            float: right;
+            transition: transform 0.3s ease;
+        }
+
+        .open .arrow {
+            transform: rotate(90deg);
+        }
+
+        .feature-content a {
+            color: #13217c;
+            font-weight: 600;
+            transition: color 0.2s ease-in;
+        }
+
+        .feature-content a:hover {
+            color: #000000;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -277,6 +350,7 @@
                 <li><a href="feit.html">Faculty of Engineering (FEIT) </a></li>
                 <li><a href="feit.html">Faculty of Business & Communication (FBC) </a></li>
                 <li><a href="feit.html">Faculty of Life Science Technology (FLST) </a></li>
+                <li><a href="programs.html#masters-section">Masters Programs</a></li>
             </ul>
         </div>
 
@@ -295,6 +369,7 @@
                 <li><a href="parents.html">Parent Information</a></li>
                 <li><a href="studentlife.html">Student Life</a></li>
                 <li><a href="quiz.html">Find Your Major</a></li>
+                <li><a href="quiz.html">Tuition Fees</a></li>
             </ul>
         </div>
 
@@ -309,7 +384,53 @@
     </div>
 </div>
 <hr>
-<br>
+    <h1>Why Choose Us?</h1>
+   <!-- Feature Item -->
+    <div class="feature-item" onclick="toggleFeature(this)">
+        <div class="feature-header">
+            <span class="feature-title">Double Degree</span>
+            <span class="tick"></span>
+        </div>
+        <div class="feature-content">
+            Study in Indonesia and earn an International degree from a top university in Europe, with a chance of working abroad. <br>
+            <a href="https://sgu.ac.id/id/your-gateway-to-global-success/#doubledegree">Read More</a>
+        </div>
+    </div>
+    <!-- Example Copy -->
+    <div class="feature-item" onclick="toggleFeature(this)">
+        <div class="feature-header">
+            <span class="feature-title">Local and International Internships </span>
+            <span class="tick"></span>
+        </div>
+        <div class="feature-content">
+            Get firsthand working experience from a large list of trusted companies in Indonesia and abroad. <br>
+            <a href="https://sgu.ac.id/id/your-gateway-to-global-success/#doubledegree">Read More</a>
+        </div>
+    </div>
+     <!-- Example Copy -->
+    <div class="feature-item" onclick="toggleFeature(this)">
+        <div class="feature-header">
+            <span class="feature-title"> Small Classes </span>
+            <span class="tick"></span>
+        </div>
+        <div class="feature-content">
+            Our small classroom size makes the learning experience more personalized with an air of openness towards discussion. <br>
+            <a href="https://sgu.ac.id/id/your-gateway-to-global-success/#doubledegree">Read More</a>
+        </div>
+    </div>
+     <!-- Example Copy -->
+    <div class="feature-item" onclick="toggleFeature(this)">
+        <div class="feature-header">
+            <span class="feature-title"> International Standard </span>
+            <span class="tick"></span>
+        </div>
+        <div class="feature-content">
+            Our curriculum blends international and national teaching methods. Classes are taught in English while still having the aura of Indonesia. Hidup Jokowi! <br>
+            <a href="https://sgu.ac.id/id/your-gateway-to-global-success/#doubledegree">Read More</a>
+        </div>
+    </div>
+<hr>
+
 <h2 class="centerMe"> Our Partner Universities </h2>
 <div class="centerMe">
     <img src="../media/PartnerUniversities.png" width="1640">
@@ -356,6 +477,8 @@
         </div>
     </div>
 
+
+
 <!-- FOOTER -->
 <footer class="site-footer">
 
@@ -392,29 +515,35 @@
     </div>
     
 </footer>
-
-    <!-- FOOTER END -->
+<!-- FOOTER END -->
 
     <script>
-    let index = 0;
-    const slides = document.getElementById("slides");
-    const total = 3;
+
+        let index = 0;
+        const slides = document.getElementById("slides");
+        const total = 3;
 
 
     function updateSlide() {
-    slides.style.transform = `translateX(${-index * 600}px)`;
+        slides.style.transform = `translateX(${-index * 600}px)`;
     }
 
 
     function next() {
-    index = (index + 1) % total;
-    updateSlide();
+        index = (index + 1) % total;
+        updateSlide();
     }
 
 
     function prev() {
-    index = (index - 1 + total) % total;
-    updateSlide();
+        index = (index - 1 + total) % total;
+        updateSlide();
+    }
+
+     function toggleFeature(item) {
+        item.classList.toggle("open");
+        const content = item.querySelector(".feature-content");
+        content.style.display = content.style.display === "block" ? "none" : "block";
     }
     </script>
 
