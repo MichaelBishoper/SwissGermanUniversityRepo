@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Links</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+        /* 2 Column layout */
+        .useful-links-grid {
+            width: 97%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+            padding: 0 20px;
+        }
+
+        /* Each card */
+        .link-card {
+            background: oklab(84.643% -0.00358 -0.03155);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* Make the image fill the card width */
+        .link-card img {
+            width: 170px;
+            height: 120px;
+            border-radius: 10px;
+            transition: transform 0.25s;
+            border: none;
+            background: none;
+        }
+
+        /* Hover zoom */
+        .link-card img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Link title styling */
+        .link-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2a4b8a;
+            text-decoration: none;
+        }
+
+        .link-title:hover {
+            text-decoration: underline;
+        }
+
+        /* Collapsible box styling */
+        .link-details summary {
+            cursor: pointer;
+            font-weight: 600;
+            padding: 5px 0;
+        }
+
+        .link-details p {
+            padding: 10px 0;
+            line-height: 1.6;
+        }
+
+        /* Mobile responsive: switch to 1 column */
+        @media (max-width: 768px) {
+            .useful-links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+<nav class="main-nav">
+    <ul class="nav-list">
+        <li class="nav-item">
+            <a href="mainpage.html"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
+        </li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="programs.html">Programs</a></li>
+        <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
+        <li class="nav-item"><a href="#">Affiliate Links</a></li>
+    </ul>
+</nav>
+<!-- HEADER END -->
+
+<h1 class="heading-card">Useful Links</h1>
+
+<div class="useful-links-grid">
+
+    <!-- ITEM 1 -->
+    <div class="link-card">
+        <a href="https://alumni.sgu.ac.id/about-us/" target="_blank">
+            <img src="../media/IKASGU.png" alt="Link Image">
+        </a>
+        <a href="https://alumni.sgu.ac.id/about-us/" class="link-title" target="_blank">
+            Visit IKASGU
+        </a>
+
+        <details class="link-details">
+            <summary>About Us</summary>
+            <p>
+                IKA SGU plays a role in becoming a forum for alumni to be able to synergize with one another. With this forum for togetherness, it is hoped that alumni can work hand in hand in facing global challenges and participate in the development of the nation and state of Indonesia.
+            </p>
+        </details>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="link-card">
+        <a href="https://example.com" target="_blank">
+            <img src="../media/SGULC.png" alt="Link Image">
+        </a>
+        <a href="https://example.com" class="link-title" target="_blank">
+            Visit SGU's Language Center
+        </a>
+
+        <details class="link-details">
+            <summary>About Us</summary>
+            <p>
+                SGU Language Center, established on July 1, 2024, is a leading language center focused on developing language skills that support academic and professional success. With a commitment to providing high-quality language education, SGU Language Center offers an authentic and immersive language learning experience through interactive teaching and experienced instructors, designed to support learners’ success in various environments, both local and international.
+            </p>
+        </details>
+    </div>
+
+    <!-- ITEM 1 -->
+    <div class="link-card">
+        <a href="https://stc.sgu.ac.id/" target="_blank">
+            <img src="../media/SGUTEC.png" alt="Link Image">
+        </a>
+        <a href="https://stc.sgu.ac.id/" class="link-title" target="_blank">
+            Visit SGU Training and Educatuin Center
+        </a>
+
+        <details class="link-details">
+            <summary>About Us</summary>
+            <p>
+                SGU Training & Education Center is an outstanding center for professional development, offering high-quality training programs designed to equip individuals and organizations with the skills and knowledge necessary to excel in today’s competitive world.
+            </p>
+        </details>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="link-card">
+        <a href="https://example.com" target="_blank">
+            <img src="../media/SGULC.png" alt="Link Image">
+        </a>
+        <a href="https://example.com" class="link-title" target="_blank">
+            Visit SGU's Language Center
+        </a>
+
+        <details class="link-details">
+            <summary>About Us</summary>
+            <p>
+                SGU Language Center, established on July 1, 2024, is a leading language center focused on developing language skills that support academic and professional success. With a commitment to providing high-quality language education, SGU Language Center offers an authentic and immersive language learning experience through interactive teaching and experienced instructors, designed to support learners’ success in various environments, both local and international.
+            </p>
+        </details>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="footer-left">
+        <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
+
+        <div class="footer-socials">
+            <a href="https://x.com/swissgermanuniv" target="_blank">
+                <img src="../media/x_logo.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/swissgermanuniv" target="_blank">
+                <img src="../media/ig_logo.png" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@SwissGermanUniversityOfficial" target="_blank">
+                <img src="../media/yt_logo.png" alt="YouTube">
+            </a>
+        </div>
+        <div style="display: flex; gap: 20px;">
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Contact</a></p>
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Email</a></p>
+            <p><a href="parents.html">For Parents</a></p>
+        </div>
+    </div>
+
+    <div class="footer-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
+            width="100%" 
+            height="230" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+    
+</footer>
+</body>
+</html>

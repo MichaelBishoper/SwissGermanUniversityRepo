@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/global.css">
-    <title>Main page</title>
+    <title>Programs</title>
     <style>
         /* FULL-WIDTH SECTION WRAPPER */
         .faculty-section {
             width: 100%;
-            background: #ffffff;
+            background: #39444c;
             padding: 40px 0;
             display: flex;
             justify-content: center;
@@ -72,7 +72,7 @@
         /* BLUE TEXT BAR UNDER IMAGE — ACCORDION STYLE */
         .faculty-label-bar {
             background: #314A9C;
-            color: white;
+            color: rgb(255, 255, 255);
             font-size: 16px;
             font-weight: bold;
             text-align: center;
@@ -110,28 +110,26 @@
             padding: 10px 0;       /* add vertical padding when expanded */
             opacity: 1;
         }
-        
     </style>
 </head>
-
 <body>
-    <!-- NAVBAR -->
+    <!-- HEADER -->
     <nav class="main-nav">
         <ul class="nav-list">
             <li class="nav-item">
-                <img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo">
+                <a href="mainpage.html"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
             </li>
             <li class="nav-item"><a href="about.html">About</a></li>
-            <li class="nav-item"><a href="faculties.html">Programs</a></li>
-            <li class="nav-item"><a href="#">Placeholder</a></li>
-            <li class="nav-item"><a href="#">Placeholder</a></li>
+            <li class="nav-item"><a href="#">Programs</a></li>
+            <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
+            <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
         </ul>
     </nav>
 
-    <div>
-        <h1 class="heading-card"> Faculties </h1>
-    </div>
-    <!-- FACULTY SECTION -->
+    <h1 class="heading-card">Study Programs</h1>
+    <h2> Bachelor Programs: </h2>
+    <hr>
+    <!-- BACHELOR FACULTY SECTION -->
     <div class="faculty-section">
         <div class="faculty-container">
 
@@ -147,7 +145,7 @@
             </a>
 
             <!-- STACK 2 -->
-            <a class="faculty-stack" href="bc.html">
+            <a class="faculty-stack" href="feit.html">
                 <div class="faculty-image-wrapper">
                     <img src="../media/facultybackground/background_bc.jpg" class="bg" alt="BC Background">
                     <img src="../media/facultybadge/logo_bc.png" class="badge" alt="BC Logo">
@@ -158,13 +156,52 @@
             </a>
 
             <!-- STACK 3 -->
-            <a class="faculty-stack" href="lst.html">
+            <a class="faculty-stack" href="feit.html">
                 <div class="faculty-image-wrapper">
                     <img src="../media/facultybackground/background_lst.jpg" class="bg" alt="LST Background">
                     <img src="../media/facultybadge/logo_lst.png" class="badge" alt="LST Logo">
                 </div>
                 <div class="faculty-label-bar">
                     Faculty of Life Sciences &amp; Technology
+                </div>
+            </a>
+
+        </div>
+        
+    </div>
+    <h2> Masters Programs: </h2>
+    <hr>
+    <!-- MASTERS FACULTY SECTION -->
+    <div class="faculty-section">
+        <div class="faculty-container">
+
+            <!-- STACK 1 -->
+            <a class="faculty-stack" href="https://sgu.ac.id/id/study-programs/master-of-information-technology/">
+                <div class="faculty-image-wrapper">
+                    <img src="../media/mastersimage/MIT.png" class="bg" alt="EIT Background">
+                </div>
+                <div class="faculty-label-bar">
+                    Master Program of Information Technology
+                </div>
+            </a>
+
+            <!-- STACK 2 -->
+            <a class="faculty-stack" href="https://sgu.ac.id/id/e-flyer-master-of-business-administration/">
+                <div class="faculty-image-wrapper">
+                    <img src="../media/mastersimage/MBA.png" class="bg" alt="BC Background">
+                </div>
+                <div class="faculty-label-bar">
+                    Master Program of Business Administration
+                </div>
+            </a>
+
+            <!-- STACK 3 -->
+            <a class="faculty-stack" href="https://sgu.ac.id/id/e-flyer-master-of-mechanical-engineering-engineering-management/">
+                <div class="faculty-image-wrapper">
+                    <img src="../media/mastersimage/MME.png" class="bg" alt="LST Background">
+                </div>
+                <div class="faculty-label-bar">
+                    Master Program of Mechatronics Engineering
                 </div>
             </a>
 
@@ -206,10 +243,7 @@
             loading="lazy">
         </iframe>
     </div>
-
+    
 </footer>
-
- 
-</html>
-
+</body>
 </html>

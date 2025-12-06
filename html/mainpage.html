@@ -72,7 +72,7 @@
         .nav-section {
             border: 2px solid black;
             padding: 15px;
-            background: #dce3f0;
+            background: #c2cde2;
         }
 
         /* Section heading */
@@ -97,10 +97,11 @@
             text-decoration: none;
             color: #2f4a6d;
             font-weight: bold;
+            transition: color 0.3s ease-in-out;
         }
 
         .nav-section a:hover {
-            color: #162032;
+            color: #7191d1;
         }
 
         /* WHATSAPP */
@@ -230,16 +231,15 @@
 <body>
 
 <!-- HEADER -->
-
 <nav class="main-nav">
     <ul class="nav-list">
         <li class="nav-item">
             <a href="#"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
         </li>
         <li class="nav-item"><a href="about.html">About</a></li>
-        <li class="nav-item"><a href="faculties.html">Programs</a></li>
+        <li class="nav-item"><a href="programs.html">Programs</a></li>
         <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
-        <li class="nav-item"><a href="#">Placeholder</a></li>
+        <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
     </ul>
 </nav>
 
@@ -274,14 +274,14 @@
         <div class="nav-section">
             <h2><a href="#faculties-section">Faculties</a></h2>
             <ul>
-                <li><a href="#">Faculty of Engineering (FEIT) </a></li>
-                <li><a href="#">Faculty of Business & Communication (FBC) </a></li>
-                <li><a href="#">Faculty of Life Science Technology (FLST) </a></li>
+                <li><a href="feit.html">Faculty of Engineering (FEIT) </a></li>
+                <li><a href="feit.html">Faculty of Business & Communication (FBC) </a></li>
+                <li><a href="feit.html">Faculty of Life Science Technology (FLST) </a></li>
             </ul>
         </div>
 
         <div class="nav-section">
-            <a href="../html/accomplishments.html"><h2>Accomplishments</h2></a>
+            <h2><a href="../html/accomplishments.html">Accomplishments</a></h2>
             <ul>
                 <li><a href="#">Achievements</a></li>
                 <li><a href="#">Awards</a></li>
@@ -290,10 +290,10 @@
         </div>
 
         <div class="nav-section">
-            <h2>Prestige</h2>
+            <h2>Students & Parents</h2>
             <ul>
-                <li><a href="#">Achievements</a></li>
-                <li><a href="#">Awards</a></li>
+                <li><a href="parents.html">Parent Information</a></li>
+                <li><a href="studentlife.html">Student Life</a></li>
             </ul>
         </div>
 
@@ -307,6 +307,7 @@
         </div>
     </div>
 </div>
+<hr>
 <br>
 <h2 class="centerMe"> Our Partner Universities </h2>
 <div class="centerMe">
@@ -319,7 +320,7 @@
         <div class="faculty-container">
 
             <!-- STACK 1 -->
-            <a class="faculty-stack" href="eit.html">
+            <a class="faculty-stack" href="feit.html">
                 <div class="faculty-image-wrapper">
                     <img src="../media/facultybackground/background_eit.jpg" class="bg" alt="EIT Background">
                     <img src="../media/facultybadge/logo_eit.png" class="badge" alt="EIT Logo">
@@ -330,7 +331,7 @@
             </a>
 
             <!-- STACK 2 -->
-            <a class="faculty-stack" href="bc.html">
+            <a class="faculty-stack" href="feit.html">
                 <div class="faculty-image-wrapper">
                     <img src="../media/facultybackground/background_bc.jpg" class="bg" alt="BC Background">
                     <img src="../media/facultybadge/logo_bc.png" class="badge" alt="BC Logo">
@@ -341,7 +342,7 @@
             </a>
 
             <!-- STACK 3 -->
-            <a class="faculty-stack" href="lst.html">
+            <a class="faculty-stack" href="feit.html">
                 <div class="faculty-image-wrapper">
                     <img src="../media/facultybackground/background_lst.jpg" class="bg" alt="LST Background">
                     <img src="../media/facultybadge/logo_lst.png" class="badge" alt="LST Logo">
@@ -371,6 +372,11 @@
                 <img src="../media/yt_logo.png" alt="YouTube">
             </a>
         </div>
+        <div style="display: flex; gap: 20px;">
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Contact</a></p>
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Email</a></p>
+            <p><a href="parents.html">For Parents</a></p>
+        </div>
     </div>
 
     <div class="footer-map">
@@ -383,7 +389,7 @@
             loading="lazy">
         </iframe>
     </div>
-
+    
 </footer>
 
     <!-- FOOTER END -->

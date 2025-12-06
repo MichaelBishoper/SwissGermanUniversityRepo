@@ -5,7 +5,7 @@ html, body {
     margin: 7px;
     padding: 0;
     font-family: "Calibri";
-    background-color: #dce3f0; /* light dusty blue */
+    background: radial-gradient(circle at center, #dce3f0, #c4ccdb);
     color: #1e2a3a;            /* dark desaturated blue */
     line-height: 1.6;
 }
@@ -26,13 +26,14 @@ h1.heading-card {
     padding: 15px;
 }
 
-/* Hyperlinks with subtle vintage underline */
 a {
     color: #2f4a6d;       /* muted navy */
-    text-decoration: underline;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
 }
 a:hover {
-    color: #1a2738;       /* darker navy */
+    color: #69809c;       
 }
 
 /* Global container spacing */
@@ -101,6 +102,11 @@ hr {
     align-items: center;
 }
 
+.nav-logo:hover {
+    background-color: none;
+    color: none;
+}
+
 .nav-list {
     list-style-type: none;
     margin: 0;
@@ -118,7 +124,7 @@ hr {
 
 /* Hover effect */
 .nav-item a:hover {
-    background-color: #555555;
+    background-color: #1f5678;
     color: white;
 }
 
