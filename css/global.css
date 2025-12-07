@@ -8,6 +8,7 @@ html, body {
     background: radial-gradient(circle at center, #dce3f0, #c4ccdb);
     color: #1e2a3a;            /* dark desaturated blue */
     line-height: 1.6;
+    padding-top: 20px; /* navbar height + extra spacing if needed */
 }
 
 /* Headings with vintage serif style */
@@ -89,6 +90,13 @@ hr {
     height: 60px;           
     display: flex;
     align-items: center;   
+
+    position: fixed;   /* FIXES navbar at the top */
+    top: 0;            /* stick to top */
+    left: 0;           /* align with left edge */
+    width: 100%;       /* span full width */
+    z-index: 1000;     /* make sure it stays above other content */
+    margin-top: 0px; /* pushes it up slightly */
 }
 
 .nav-logo {
@@ -121,9 +129,8 @@ hr {
     padding: 8px 16px;
     text-decoration: none;
     transition: color 0.3s ease-in;
+    font-weight: bold;
 }
-
-
 
 /* Hover effect */
 .nav-item a:hover {
@@ -230,4 +237,33 @@ img.png-img {
 @keyframes busScroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
+}
+
+.rainbow-flash {
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8f00ff,
+    #ff0000
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbowFlash 4s linear infinite;
+}
+
+@keyframes rainbowFlash {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+audio {
+  display: none;
 }

@@ -141,6 +141,30 @@
             display: block;
         }
 
+          /* Container for the grid */
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px; /* spacing between columns and rows */
+            padding: 16px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Make blockquotes responsive */
+        .instagram-grid blockquote {
+            margin: 0 !important;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Optional: center the Instagram embed inside grid item */
+        .instagram-grid div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+        }
 
     </style>
 </head>
@@ -159,10 +183,29 @@
 </nav>
 
 <h1 class="heading-card">Student Life</h1>
-<br>
-<div class="screensaver">
-    <div class="logo"></div>
+<h2 class="centerMe"> Recent Posts </h2>
+<div class="instagram-grid">
+  <div>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DR1SHe8j1P0/?utm_source=ig_embed" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; max-width:540px; min-width:326px; width:100%; margin:1px;">
+    </blockquote>
+  </div>
+  <div>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRtZSVfk7op/?utm_source=ig_embed" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; max-width:540px; min-width:326px; width:100%; margin:1px;">
+    </blockquote>
+  </div>
+  <div>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRLzdEpE8Is/?utm_source=ig_embed" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; max-width:540px; min-width:326px; width:100%; margin:1px;">
+    </blockquote>
+  </div>
+  <div>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DRDTfC6DBQ4/?utm_source=ig_embed" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; max-width:540px; min-width:326px; width:100%; margin:1px;">
+    </blockquote>
+  </div>
 </div>
+
+<!-- <div class="screensaver">
+    <div class="logo"></div>
+</div> -->
 
 <h2 class="centerMe"> Student Organizations </h2>
 
@@ -274,7 +317,7 @@
             <a href="">IMPORTANT: Free Servicces</a>
         </td>
         <td class="col-right">
-            Services like Canva Pro, Figma Student and Guthub Copilot. 
+            Services like Canva Pro, Figma Student and Github Copilot. 
         </td>
     </tr>
 </table>
@@ -331,8 +374,10 @@
             loading="lazy">
         </iframe>
     </div>
-    
+
 </footer>
 <!-- FOOTER END -->
+<!-- Instagram Scripts -->
+<script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>

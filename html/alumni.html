@@ -3,59 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Information</title>
     <link rel="stylesheet" href="../css/global.css">
-    <title>Document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            padding: 50px;
-        }
-
-        .container img {
-            width: 60%;
-            max-width: 500px;
-            border-radius: 10px;
-            border: none;
-            background: none;
-        }
-
-        .text {
-            width: 50%;
-            font-size: 1.2rem;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.8s ease-out;
-        }
-
-        /* Trigger the animation */
-        .text.animate {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-            flex-direction: column;
-            }
-            .container img, .text {
+        /* Banner Container */
+        .slider {
+            position: relative;
             width: 100%;
-            }
+            max-width: 1000px;         /* adjust to your liking */
+            height: 400px;             /* height of banner */
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        /* Slide Images */
+        .slides {
+            display: flex;
+            width: 200%;               /* 2 images */
+            height: 100%;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: none;
+            border: none;
+        }
+
+        /* Button on top of image */
+        .slider-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 14px 32px;
+            background-color: #000000;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .slider-btn:hover {
+            background-color: #0274a0;
         }
     </style>
 </head>
 <body>
-
-<!-- HEADER -->
+    <!-- HEADER -->
 <nav class="main-nav">
     <ul class="nav-list">
         <li class="nav-item">
@@ -66,31 +67,30 @@
         <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
         <li class="nav-item"><a href="events.html">Events</a></li>
         <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
+        <li class="nav-item"><a href="registration.html">Register</a></li>
     </ul>
 </nav>
 
-<h1 class="heading-card">Accomplishments</h1>
-
-<div class="container">
-  <img src="../media/SGU_Banner2.webp" alt="Sample Image">
-  <div class="text" id="text-left">
-    <h2>Non-Academic Prominence</h2>
-    <p>SGU graduates have a reputation of being skilled in areas outside of academics. They are more inclined to have better soft-skills and employability than their counterparts.</p>
+<!-- Slider -->
+<div class="slider">
+  <div class="slides" id="slide-track">
+    <img src="../media/Alumni_Banner_1.jpg" alt="Banner 1">
+    <img src="../media/Alumni_Banner_2.jpg" alt="Banner 2">
   </div>
+
+  <button class="slider-btn" onclick="window.location.href='https://alumni.sgu.ac.id/'">
+    Register Now
+  </button>
 </div>
 
-<div class="container" style="flex-direction: row-reverse;">
-  <img src="../media/SGU_Banner3.webp" alt="Sample Image">
-  <div class="text" id="text-right">
-    <h2>Research and Community Service Performance</h2>
-    <p>SGU's research publications are on average of higher quality than its counterparts, because of the smaller number of students enrolled.</p>
-  </div>
-</div>
+<img src="../media/alumnimedia/alumniinfo.png" alt="" class="png-img" width="1380">
 
 <!-- FOOTER -->
 <footer class="site-footer">
+
     <div class="footer-left">
         <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
+
         <div class="footer-socials">
             <a href="https://x.com/swissgermanuniv" target="_blank">
                 <img src="../media/x_logo.png" alt="Twitter">
@@ -108,7 +108,6 @@
             <p><a href="parents.html">For Parents</a></p>
         </div>
     </div>
-
     <div class="footer-map">
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
@@ -119,17 +118,17 @@
             loading="lazy">
         </iframe>
     </div>
-
 </footer>
 <!-- FOOTER END -->
-<script>
-    window.addEventListener('load', () => {
-        document.getElementById('text-left').classList.add('animate');
-    });
+ <script>
+  // Automatic slide every 4 seconds
+  let index = 0;
+  const slider = document.getElementById("slide-track");
 
-    window.addEventListener('load', () => {
-        document.getElementById('text-right').classList.add('animate');
-    });
+  setInterval(() => {
+    index = (index + 1) % 2; // toggles 0 → 1 → 0 → 1...
+    slider.style.transform = `translateX(-${index * 50}%)`;
+  }, 4000);
 </script>
 </body>
 </html>

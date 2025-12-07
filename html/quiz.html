@@ -159,6 +159,9 @@
     </div>
     
 </footer>
+
+<audio id="bg-audio" src="../media/WhatsUrMajor.mp3" autoplay muted></audio>
+
 <script>
 function calculateMajor() {
     const answers = [
@@ -210,6 +213,22 @@ function calculateMajor() {
         resultDiv.style.display = "none";
     }, 7500);
 }
+
+window.addEventListener("load", () => {
+    const audio = document.getElementById("bg-audio");
+
+    // Wait for any user interaction before unmuting
+    const enableSound = () => {
+        audio.muted = false;
+        audio.volume = 1;
+        audio.play();
+        document.removeEventListener("click", enableSound);
+        document.removeEventListener("scroll", enableSound);
+    };
+
+    document.addEventListener("click", enableSound);
+    document.addEventListener("scroll", enableSound);
+});
 </script>
 </body>
 </html>
