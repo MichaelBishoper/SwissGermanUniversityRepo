@@ -232,6 +232,7 @@ img.png-img {
     display: inline-block;
     padding-left: 100%;
     animation: busScroll 10s linear infinite;
+    font-size: 1.9rem;
 }
 
 @keyframes busScroll {
