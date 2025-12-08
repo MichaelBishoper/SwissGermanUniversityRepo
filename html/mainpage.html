@@ -302,14 +302,23 @@
         }
     </style>
 </head>
+<script src="../js/navburger.js"></script>
 <body>
 
 <!-- HEADER -->
 <nav class="main-nav">
+    <!-- LOGO -->
+    <a href="mainpage.html" class="nav-logo-link">
+        <img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo">
+    </a>
+
+    <!-- HAMBURGER BUTTON (separate child of .main-nav) -->
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        ☰
+    </button>
+
+    <!-- NAV ITEMS -->
     <ul class="nav-list">
-        <li class="nav-item">
-            <a href="mainpage.html"><img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo"></a>
-        </li>
         <li class="nav-item"><a href="about.html">About</a></li>
         <li class="nav-item"><a href="programs.html">Programs</a></li>
         <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
