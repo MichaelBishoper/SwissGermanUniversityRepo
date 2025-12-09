@@ -1,0 +1,24 @@
+<div style="padding: 20px; border: 2px solid #ccc; width: 300px; border-radius: 10px;">
+    <p style="font-weight: bold;">O Emperor of Jade, why have you forsaken your children?<br>
+    I swear that on 32 35 20 44 65 63 65 6D 62 65 72 20 32 30 32 35 I will make him pay. <br>
+    ꦏꦝꦶꦫꦶ 
+    </p>
+    <input id="secret-input" type="password">
+    <button onclick="checkPass()">
+        Submit
+    </button>
+    <p id="error" style="color: red; font-size: 14px; margin-top: 10px;"></p>
+</div>
+
+<script>
+function checkPass() {
+    const input = document.getElementById("secret-input").value;
+    const correct = "sean"; 
+
+    if (input === correct) {
+        window.location.href = "unknown.html";
+    } else {
+        document.getElementById("error").innerText = "Incorrect password.";
+    }
+}
+</script>
