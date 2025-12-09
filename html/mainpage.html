@@ -7,101 +7,18 @@
     <title>Main page</title>
     <style>
 
-        /* Slider */
-
-        .slider {
-            position: relative;
-            width: 600px;
-            height: 350px;
-            overflow: hidden;
-            border: 3px solid #000000;
-            background: #6896df;
-        }
-
-        .slides {
-            display: flex;
-            width: max-content; 
-            height: 100%;
-            transition: transform 0.5s ease;
-        }
-
-        .slides img {
-            width: 600px;   
-            height: 350px;   
-            object-fit: cover; 
-            border: none;
-            padding: 0;
-        }
-
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #32a2e8;
-            border: 1px solid #000000;
-            padding: 10px 14px;
-            cursor: pointer;
-            font-size: 20px;
-            user-select: none;
-            transition: background 0.3s ease-in-out; 
-        }
-
-        .arrow:hover {
-            background: #abb0dc;
-        }
-
-        .left { left: 10px; }
-        .right { right: 10px; }
-
-        /* MOBILE FRIENDLY SLIDER */
-        @media (max-width: 768px) {
-
-            .slider {
-                width: 100%;              /* full width on mobile */
-                height: auto;             /* height adjusts based on images */
-                max-width: 100%;
-            }
-
-            .slides img {
-                width: 100%;              /* images scale to fit screen */
-                height: auto;             /* keep aspect ratio */
-            }
-
-            .arrow {
-                padding: 6px 10px;        /* smaller buttons */
-                font-size: 16px;          /* smaller text */
-                top: 45%;
-            }
-
-            .left { left: 6px; }
-            .right { right: 6px; }
-        }
-
-        /* EXTRA small screens */
-        @media (max-width: 480px) {
-            .arrow {
-                padding: 4px 8px;
-                font-size: 14px;
-            }
-
-            .left { left: 4px; }
-            .right { right: 4px; }
-        }
+       
 
 
          /* 2-column layout */
         .main-layout {
-            display: grid;
-            grid-template-columns: 600px 1fr;
-            gap: 20px;
-            align-items: start;
+           
         }
 
         /* 2×2 grid for the right side */
         .nav-block {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            display: flex;
+
         }
 
         /* Individual section */
@@ -110,6 +27,16 @@
             border-radius: 20px;
             padding: 15px;
             background: #c2cde2;
+            width: 600px;
+        }
+
+        /* MOBILE ONLY (screens ≤ 600px) */
+        @media (max-width: 600px) {
+            .nav-section {
+                width: 90%;      /* shrink to fit mobile screens */
+                max-width: 350px; /* optional safety cap */
+                margin: 0 auto;  /* center it */
+            }
         }
 
         /* Section heading */
@@ -497,7 +424,7 @@
         <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
         <li class="nav-item"><a href="events.html">Events</a></li>
         <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
-        <li class="nav-item"><a href="scholarships.html">Scholarships</a></li>
+        <li class="nav-item"><a href="scholarship.html">Scholarships</a></li>
         <li class="nav-item"><a href="registration.html">Register</a></li>
     </ul>
 </nav>
@@ -517,22 +444,8 @@
 <hr>
 
 <div class="main-layout">
-
-    <!-- LEFT COLUMN: Slider -->
-    <div class="slider">
-        <div class="slides" id="slides">
-            <img src="../media/SGU_Banner.webp" alt="Image 1">
-            <img src="../media/SGU_Banner2.webp" alt="Image 2">
-            <img src="../media/SGU_Banner3.webp" alt="Image 3">
-        </div>
-
-        <div class="arrow left" onclick="prev()">&#10094;</div>
-        <div class="arrow right" onclick="next()">&#10095;</div>
-    </div>
-
-    <!-- RIGHT COLUMN: Section Grid -->
+    <h1 class="centerMe">Get Started</h1>
     <div class="nav-block">
-
         <div class="nav-section">
             <h2>Programs</h2>
             <ul>

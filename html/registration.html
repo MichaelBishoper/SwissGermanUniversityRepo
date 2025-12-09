@@ -32,6 +32,56 @@
             border: none;
             background: none;
         }
+
+        .pre-req {
+            padding: 10px;
+            background: linear-gradient(90deg,rgba(121, 212, 247, 1) 0%, rgba(87, 149, 199, 1) 100%, rgba(237, 221, 83, 1) 100%);
+            font-size: 1.3em;
+            border-radius: 15px;
+        }
+
+        .heading {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .pre-req-en {
+            padding: 10px;
+            background: linear-gradient(90deg,rgba(121, 212, 247, 1) 0%, rgba(87, 149, 199, 1) 100%, rgba(237, 221, 83, 1) 100%);
+            font-size: 1.3em;
+            border-radius: 15px;
+        }
+
+        .pre-req-buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pre-req-buttons button {
+            border: none;
+            font-weight: bold;
+            background: rgb(94, 160, 186);
+           
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200%;
+
+            transition: transform 0.3s ease;
+        }
+
+        .pre-req-buttons button:hover {
+            transform: scale(1.01);
+        }
+
+        .active-button {
+            background: rgb(66, 126, 149) !important;
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <script src="../js/navburger.js"></script>
@@ -56,6 +106,7 @@
         <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
         <li class="nav-item"><a href="events.html">Events</a></li>
         <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
+        <li class="nav-item"><a href="scholarship.html">Scholarships</a></li>
         <li class="nav-item"><a href="registration.html">Register</a></li>
     </ul>
 </nav>
@@ -69,6 +120,232 @@
     <img src="../media/bachelorRegister.png" alt="Image 2">
   </a>
 </div>
+
+<h1 class="centerMe"> Pre-Requisites for Registration (Important) </h1>
+
+<div class="pre-req-buttons">
+    <button id="EN" class="pre-req-button">EN</button>
+    <button id="ID" class="pre-req-button">ID</button>
+</div>
+
+
+<div id="id-text" class="pre-req">
+    <p class="heading">Dokumen Yang Dibutuhkan</p>
+    <p>1. 1 salinan raport kelas 10, 11, dan 12 yang dilegalisir oleh Kepala Sekolah.
+    <br>
+    2. 1 fotokopi KTP / SIM / Paspor untuk pelajar lokal.
+    <br>
+    3. 1 lembar Paspor & KITAS untuk Sekolah Internasional.
+    <br>
+    4. 2 buah pas foto berukuran 4 X 6 cm (berwarna, dengan latar belakang merah).
+    <br>
+    5. 1 fotokopi Kartu Keluarga.
+    <br>
+    6. 1 fotokopi Surat Keterangan Keluarga (Kartu Keluarga).
+    <br>
+    7. Surat keterangan dokter yang menyatakan bahwa siswa tidak menderita buta warna (khusus untuk siswa Life Sciences).
+    <br>
+    8. 1 lembar fotokopi ijazah SMA / SMK / MA yang dilegalisir oleh kepala sekolah (SETELAH DITERBITKAN).
+    <br>
+    9. 1 lembar fotokopi Transkrip Nilai (Surat Keterangan Hasil Ujian Nasional SMA / SMK / MA) yang dilegalisir oleh kepala sekolah (SETELAH DITERBITKAN).
+    <br>
+    10. Calon lulusan luar negeri atau sekolah menengah internasional harus melegalisasi (Penyetaraan) ijazah sekolah menengah melalui Kementerian Pendidikan Nasional Republik Indonesia atau mengikuti IJAZAH Paket C.</p>
+    <br>
+    <p class="heading">Prosedur Pendaftaran</p>
+    <p>
+        1. Pendaftaran <br>
+        Pendaftaran penerimaan tahun 2025/2026 akan mulai pada tanggal 31 Juli 2026. Anda bisa daftar di sini dan pastikan Anda mengisi formulir dengan lengkap dan benar.
+        <br>
+        2. Biaya Pendaftaran <br>
+        The payment link will be sent after the candidate successfully completes the registration process. The registration link will be sent via WhatsApp and email provided during registration.
+        <br>
+        3. Test  <br>
+        Tes Masuk terdiri dari tes tertulis Bahasa Inggris dan Matematika.
+        Tautan Tes Masuk akan dikirim ke email Anda. silakan ikuti tes maksimal dua hari setelah Anda menerima email.
+        <br>
+        4. Interview <br>
+        Wawancara dapat dilakukan melalui platform online atau tatap muka di Kampus SGU The Prominence Tower Alam Sutera, sesuai jadwal yang Anda isi di formulir pendaftaran online.
+    </p>
+</div>
+
+<div id="en-text" class="pre-req-en hidden">
+    <p class="heading">Required Documents</p>
+    <p>1. 1 copy of the report cards for grades 10, 11, and 12 legalized by the School Principal.
+    <br>
+    2. 1 photocopy of ID Card / Driver’s License / Passport for local students.
+    <br>
+    3. 1 sheet of Passport & KITAS for International School students.
+    <br>
+    4. 2 pieces of 4 X 6 cm passport photos (colored, with a red background).
+    <br>
+    5. 1 photocopy of the Family Card.
+    <br>
+    6. 1 photocopy of the Family Certificate (Family Card).
+    <br>
+    7. A medical certificate stating that the student is not color blind (specifically for Life Sciences students).
+    <br>
+    8. 1 photocopy of the high school diploma (SMA / SMK / MA) legalized by the school principal (AFTER ISSUED).
+    <br>
+    9. 1 photocopy of the Transcript (National Examination Result Letter for SMA / SMK / MA) legalized by the school principal (AFTER ISSUED).
+    <br>
+    10. Prospective graduates from overseas or international secondary schools must legalize (Equivalency) their secondary school diploma through the Ministry of National Education of the Republic of Indonesia or take the Paket C equivalency exam.</p>
+    <br>
+    <p class="heading">Registration Procedure</p>
+    <p>
+        1. Registration <br>
+        Registration for the 2025/2026 academic year will begin on July 31, 2026. You can register here and make sure you fill out the form completely and accurately.
+        <br>
+        2. Registration Fee <br>
+        The payment link will be sent after the candidate successfully completes the registration process. The registration link will be sent via WhatsApp and the email provided during registration.
+        <br>
+        3. Test <br>
+        The Entrance Test consists of a written English and Mathematics test.
+        The Entrance Test link will be sent to your email. Please complete the test no later than two days after receiving the email.
+        <br>
+        4. Interview <br>
+        The interview can be conducted online or in person at the SGU Campus, The Prominence Tower, Alam Sutera, according to the schedule you filled out in the online registration form.
+    </p>
+</div>
+
+<h1 class="centerMe"> Need Help? Feel Free to Contact Us! </h1>
+
+<section style="display: flex; gap: 20px; justify-content: center; padding: 20px;">
+
+    <!-- COLUMN 1 -->
+    <div style="
+        width: 30%;
+        background: #f2f2f2;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+    ">
+        <img src="../media/consultant_1.png" alt="" class="goofy-spin" style="
+            width: 600px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #ddd;
+        ">
+        <p style="margin-top: 10px;">Sari Lusiana</p>
+        <a href="https://api.whatsapp.com/send?phone=628118010600&text=Halo%20kak%20Lusi%2C%20saya%20mau%20tau%20info%20lebih%20lanjut%20tentang%20SGU." style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            border: 2px solid #1da851;
+            transition: transform 0.2s ease;
+        "
+        onmouseover="this.style.transform='scale(1.03)'"
+        onmouseout="this.style.transform='scale(1)'"
+        >
+            <img src="../media/wa_logo.png" alt="WhatsApp" style="
+                width: 50px;
+                height: 50px;
+                border: none;
+                background: none;
+            ">
+            <span></span>
+        </a>
+    </div>
+
+    <!-- COLUMN 2 -->
+    <div style="
+        width: 30%;
+        background: #f2f2f2;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+    ">
+        <img src="../media/consultant_2.png" alt="" class="goofy-spin" style="
+            width: 600px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #ddd;
+        ">
+        <p style="margin-top: 10px;">Desnita</p>
+        <a href="https://api.whatsapp.com/send?phone=628118010600&text=Halo%20kak%20Lusi%2C%20saya%20mau%20tau%20info%20lebih%20lanjut%20tentang%20SGU." style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            border: 2px solid #1da851;
+            transition: transform 0.2s ease;
+        "
+        onmouseover="this.style.transform='scale(1.03)'"
+        onmouseout="this.style.transform='scale(1)'"
+        >
+            <img src="../media/wa_logo.png" alt="WhatsApp" style="
+                width: 50px;
+                height: 50px;
+                border: none;
+                background: none;
+            ">
+            <span></span>
+        </a>
+    </div>
+
+    <!-- COLUMN 3 -->
+    <div style="
+        width: 30%;
+        background: #f2f2f2;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+    ">
+        <img src="../media/consultant_3.png" alt="Goofy" class="goofy-spin" style="
+            width: 600px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #ddd;
+        ">
+        <p style="margin-top: 10px;">Dennis Gunadi</p>
+        <a href="https://api.whatsapp.com/send?phone=628118010600&text=Halo%20kak%20Lusi%2C%20saya%20mau%20tau%20info%20lebih%20lanjut%20tentang%20SGU." style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            border: 2px solid #1da851;
+            transition: transform 0.2s ease;
+        "
+        onmouseover="this.style.transform='scale(1.03)'"
+        onmouseout="this.style.transform='scale(1)'"
+        >
+            <img src="../media/wa_logo.png" alt="WhatsApp" style="
+                width: 50px;
+                height: 50px;
+                border: none;
+                background: none;
+            ">
+            <span></span>
+        </a>
+
+    </div>
+
+</section>
+
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -107,6 +384,42 @@
     
 </footer>
 <!-- FOOTER END -->
+<script>
 
+const buttons = document.querySelectorAll('.pre-req-button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove 'active-state' from all other buttons
+        buttons.forEach(otherButton => {
+            if (otherButton !== button) {
+                otherButton.classList.remove('active-button');
+            }
+        });
+        // Add 'active-state' to the clicked button
+        button.classList.add('active-button');
+    });
+});
+
+const english = document.getElementById('EN');
+const indonesian = document.getElementById('ID');
+const enText = document.getElementById('en-text')
+const idText = document.getElementById('id-text')
+
+english.addEventListener('click', () => {
+    if (enText.classList.contains("hidden")) {
+        enText.classList.remove("hidden")
+        idText.classList.add("hidden")
+    } 
+})
+
+indonesian.addEventListener('click', () => {
+    if (idText.classList.contains("hidden")) {
+        idText.classList.remove("hidden")
+        enText.classList.add("hidden")
+    }
+})
+
+</script>
 </body>
 </html>
