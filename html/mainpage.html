@@ -53,6 +53,42 @@
         .left { left: 10px; }
         .right { right: 10px; }
 
+        /* MOBILE FRIENDLY SLIDER */
+        @media (max-width: 768px) {
+
+            .slider {
+                width: 100%;              /* full width on mobile */
+                height: auto;             /* height adjusts based on images */
+                max-width: 100%;
+            }
+
+            .slides img {
+                width: 100%;              /* images scale to fit screen */
+                height: auto;             /* keep aspect ratio */
+            }
+
+            .arrow {
+                padding: 6px 10px;        /* smaller buttons */
+                font-size: 16px;          /* smaller text */
+                top: 45%;
+            }
+
+            .left { left: 6px; }
+            .right { right: 6px; }
+        }
+
+        /* EXTRA small screens */
+        @media (max-width: 480px) {
+            .arrow {
+                padding: 4px 8px;
+                font-size: 14px;
+            }
+
+            .left { left: 4px; }
+            .right { right: 4px; }
+        }
+
+
          /* 2-column layout */
         .main-layout {
             display: grid;
@@ -300,6 +336,143 @@
             color: #000000;
             font-weight: 600;
         }
+
+        /* Information Picture Cards */
+
+        /* container card */
+        .card {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        max-width: 880px;
+        margin: 20px auto;
+        padding: 16px;
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 10px;
+        background: linear-gradient(180deg, rgba(164, 190, 214, 0.98), rgba(186, 192, 197, 0.98));
+        box-shadow: 0 6px 18px rgba(11,22,40,0.04);
+        }
+
+        /* reverse modifier flips image & content order */
+        .card--reverse {
+        flex-direction: row-reverse;
+        }
+
+        /* image wrapper */
+        .card__img {
+            flex: 0 0 320px; /* fixed-ish width */
+            border-radius: 8px;
+            overflow: hidden;
+            min-width: 120px;
+        }
+
+        .card__img img {
+            display: block;
+            width: 380px;
+            height: 300px;
+            max-height: 220px;
+            object-fit: cover;
+            vertical-align: middle;
+            border: none;
+            background: none;
+            border-radius: 15px;
+
+        }
+
+        /* text content area */
+        .card__content {
+        flex: 1 1 auto;
+        min-width: 0; /* allow text truncation in flex */
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        }
+
+        .card__title {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        }
+
+        .card__subtitle {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #555;
+        }
+
+        .card__excerpt {
+        margin: 0.3rem 0 0;
+        color: #333;
+        font-size: 0.95rem;
+        }
+
+        /* details styling (expandable description) */
+        .card__details {
+        margin-top: 8px;
+        border-top: 1px dashed rgba(0,0,0,0.06);
+        padding-top: 10px;
+        }
+
+        .card__details summary {
+        cursor: pointer;
+        list-style: none;
+        font-weight: 600;
+        user-select: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        }
+
+        /* little arrow icon using pseudo element to avoid images */
+        .card__details summary::-webkit-details-marker {
+        display: none; /* hide default marker in some browsers */
+        }
+
+        .card__details summary .arrow {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        transition: transform 160ms ease;
+        transform-origin: center;
+        }
+
+        /* rotate arrow when open */
+        .card__details[open] summary .arrow {
+        transform: rotate(90deg);
+        }
+
+        /* simple decorative arrow (SVG) */
+        .arrow svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        }
+
+        .card__details .desc {
+        margin-top: 8px;
+        color: #333;
+        font-size: 0.95rem;
+        line-height: 1.45;
+        }
+
+        /* responsiveness */
+        @media (max-width: 720px) {
+        .card {
+            flex-direction: column;
+        }
+        .card--reverse {
+            flex-direction: column; /* don't reverse on narrow screens */
+        }
+        .card__img {
+            width: 100%;
+            flex-basis: auto;
+        }
+        .card__img img {
+            max-height: 360px;
+            border: none;
+            background: none;
+        }
+    }
     </style>
 </head>
 <script src="../js/navburger.js"></script>
@@ -401,51 +574,131 @@
     </div>
 </div>
 <hr>
-    <h1>Why Choose Us?</h1>
-   <!-- Feature Item -->
-    <div class="feature-item" onclick="toggleFeature(this)">
-        <div class="feature-header">
-            <span class="feature-title">Double Degree</span>
-            <span class="tick"></span>
-        </div>
-        <div class="feature-content">
-            Study in Indonesia and earn an International degree from a top university in Europe, with a chance of working abroad. <br>
-            <a href="https://sgu.ac.id/id/your-gateway-to-global-success/#doubledegree">Read More</a>
-        </div>
+    <h1 class="centerMe">Why Choose Us?</h1>
+    
+<section class="card" aria-labelledby="c1-title">
+    <div class="card__img" aria-hidden="true">
+      <img src="../media/International.png" alt="Scenic mountain lake">
     </div>
-    <!-- Example Copy -->
-    <div class="feature-item" onclick="toggleFeature(this)">
-        <div class="feature-header">
-            <span class="feature-title">Local and International Internships </span>
-            <span class="tick"></span>
+
+    <div class="card__content">
+      <h3 id="c1-title" class="card__title">International Curriculum</h3>
+      <p class="card__subtitle">With fully English classes you will be ready for the International frontier.</p>
+      <p class="card__subtitle">International Standard of Education</p>
+
+      <details class="card__details" aria-labelledby="c1-title">
+        <summary>
+          <!-- <span class="arrow" aria-hidden="true"> -->
+            <!-- small right-pointing chevron SVG -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+          <span>Read More:</span>
+        </summary>
+
+        <div class="desc">
+          <p>
+            Our university is one of few in Indonesia to provide fully English learning. We want to prepare our Students
+            for the international market. If you would like to learn or would like your kids to learn to be more global, we are the right choice for you.
+          </p>
         </div>
-        <div class="feature-content">
-            Get firsthand working experience from a large list of trusted companies in Indonesia and abroad. <br>
-            <a href="https://sgu.ac.id/id/your-gateway-to-global-success/#doubledegree">Read More</a>
-        </div>
+      </details>
     </div>
-     <!-- Example Copy -->
-    <div class="feature-item" onclick="toggleFeature(this)">
-        <div class="feature-header">
-            <span class="feature-title"> Small Classes </span>
-            <span class="tick"></span>
-        </div>
-        <div class="feature-content">
-            Our small classroom size makes the learning experience more personalized with an air of openness towards discussion. <br>
-            <a href="https://sgu.ac.id/id/your-gateway-to-global-success/#doubledegree">Read More</a>
-        </div>
+  </section>
+
+  <!-- Card 2: Image right, text left -->
+  <section class="card card--reverse" aria-labelledby="c2-title">
+    <div class="card__img" aria-hidden="true">
+      <img src="../media/DoubleDegree.png" alt="">
     </div>
-     <!-- Example Copy -->
-    <div class="feature-item" onclick="toggleFeature(this)">
-        <div class="feature-header">
-            <span class="feature-title"> International Standard </span>
-            <span class="tick"></span>
+
+    <div class="card__content">
+      <h3 id="c2-title" class="card__title">Double Degree</h3>
+      <p class="card__subtitle">Get degrees from a top university in Europe and in Indonesia. </p>
+      <p class="card__excerpt">What is Double Degree and Why is it useful?</p>
+
+      <details class="card__details" aria-labelledby="c2-title">
+        <summary>
+          <!-- <span class="arrow" aria-hidden="true"> -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+          <span>Read More:</span>
+        </summary>
+
+        <div class="desc">
+          <p>
+            A Double Degree is an academic program allowing students to earn two distinct degrees, often from different universities (domestic & international) or fields, in a shorter time than pursuing them separately, offering broader skills, enhanced global experience, and better job competitiveness by combining coursework into a single program.
+          </p>
         </div>
-        <div class="feature-content">
-            Our curriculum blends international and national teaching methods. Classes are taught in English while still having the aura of Indonesia. Hidup Jokowi! <br>
-            <a href="https://sgu.ac.id/id/your-gateway-to-global-success/#doubledegree">Read More</a>
-        </div>
+      </details>
     </div>
+  </section>
+
+<section class="card" aria-labelledby="c1-title">
+    <div class="card__img" aria-hidden="true">
+      <img src="../media/Edge.png" alt="Scenic mountain lake">
+    </div>
+
+    <div class="card__content">
+      <h3 id="c1-title" class="card__title">Edging Education</h3>
+      <p class="card__subtitle">With fully English classes you will be ready for the International frontier.</p>
+      <p class="card__subtitle">International Standard of Education</p>
+
+      <details class="card__details" aria-labelledby="c1-title">
+        <summary>
+          <!-- <span class="arrow" aria-hidden="true"> -->
+            <!-- small right-pointing chevron SVG -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+          <span>Read More:</span>
+        </summary>
+
+        <div class="desc">
+          <p>
+            Our university is one of few in Indonesia to provide fully English learning. We want to prepare our Students
+            for the international market. If you would like to learn or would like your kids to learn to be more global, we are the right choice for you.
+          </p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Card 2: Image right, text left -->
+  <section class="card card--reverse" aria-labelledby="c2-title">
+    <div class="card__img" aria-hidden="true">
+      <img src="../media/SmallClassroom.png" alt="">
+    </div>
+
+    <div class="card__content">
+      <h3 id="c2-title" class="card__title">Small Classrooms</h3>
+      <p class="card__subtitle">Size does not matter! </p>
+      <p class="card__excerpt">How do our smaller classrooms result in better education?</p>
+
+      <details class="card__details" aria-labelledby="c2-title">
+        <summary>
+          <!-- <span class="arrow" aria-hidden="true"> -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+          <span>Read More:</span>
+        </summary>
+
+        <div class="desc">
+          <p>
+            Smaller means more personal, more personal means that the learning is done more efficiently and even better. This is because research shows that 67% of students study better with a professor that they consider friendly than with a professor that they consider to me above them.
+          </p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+
 <hr>
 
 <h2 class="centerMe"> Our Partner Universities </h2>
@@ -493,8 +746,6 @@
 
         </div>
     </div>
-
-
 
 <!-- FOOTER -->
 <footer class="site-footer">
