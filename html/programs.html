@@ -118,6 +118,85 @@
             margin-top: 20px;
             margin-bottom: 40px;
         }
+
+        /* scholarship */
+        /* SCHOLARSHIP PROMO CARD */
+.sch-promo-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 2px solid #6b7c99;
+    border-radius: 12px;
+    margin: 30px 0;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.sch-promo-card:hover {
+    background: #f0f5ff;
+    transform: translateY(-2px);
+}
+
+.sch-promo-left {
+    max-width: 60%;
+}
+
+.sch-promo-card h2 {
+    margin: 0 0 8px;
+    color: #1e2a3a;
+    font-family: "Calibri";
+    font-size: 1.6rem;
+}
+
+.sch-promo-card p {
+    margin: 0 0 12px;
+    color: #314766;
+}
+
+.sch-promo-btn {
+    background: #1e93e0;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: background 0.25s ease;
+}
+
+.sch-promo-card:hover .sch-promo-btn {
+    background: #1572b0;
+}
+
+.sch-promo-img {
+    width: 180px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .sch-promo-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .sch-promo-left {
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .sch-promo-img {
+        width: 100%;
+        height: auto;
+    }
+}
     </style>
 </head>
 <script src="../js/navburger.js"></script>
@@ -187,9 +266,9 @@
             </a>
         </div>
     </div>
-    <div class="tuition-image-box">
-    <img src="../media//Tuotionfee.png" alt="Tuition Fee" width="1360">
-    </div>
+
+
+ 
 
     <h2 id="masters-section"> Masters Programs: </h2>
     <hr>
@@ -230,6 +309,19 @@
         </div>
         
     </div>
+
+        <a href="scholarship.html" class="sch-promo-card sch-promo-card--simple">
+        <div class="sch-promo-left">
+            <h2>Scholarships &amp; Financial Support</h2>
+            <p>
+                Discover SGU scholarship pathways for Bachelor and Master students, including
+                academic, non-academic, and alumni schemes.
+            </p>
+            <span class="sch-promo-btn">
+                View Scholarship Programs →
+            </span>
+        </div>
+    </a>
     <div class="tuition-image-box">
     <img src="../media/Tuitionfee_Master.png" alt="Tuition Fee" width="1360">
     </div>

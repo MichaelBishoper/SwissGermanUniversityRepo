@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship | Swiss German University</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <script src="../js/navburger.js" defer></script>
+
+    <style>
+        /* PAGE WRAPPER */
+        .scholarship-page {
+            max-width: 1100px;
+            margin: 20px auto 40px auto;
+            padding: 0 10px;
+        }
+
+        .scholarship-hero {
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .scholarship-hero img {
+            width: 100%;
+            height: auto;
+            max-height: 320px;
+            object-fit: cover;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            margin: 20px 0 10px;
+        }
+
+        .page-subtitle {
+            margin-bottom: 25px;
+            color: #42536b;
+        }
+
+        /* CARD STYLES */
+        .sch-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin-bottom: 20px;
+            border: 1px solid #c5cfdd;
+        }
+
+        .sch-card-primary {
+            background: #1e93e0;
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 22px 24px;
+            margin-bottom: 20px;
+        }
+
+        .sch-card-primary h2 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+
+        .sch-card-primary p {
+            margin: 0.4em 0;
+        }
+
+        .sch-section-title {
+            margin-top: 35px;
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+        }
+
+        /* BUTTON */
+        .btn-join {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            border: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            background: #ffffff;
+            color: #1e93e0;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
+            transition: background 0.25s ease, color 0.25s ease, transform 0.1s ease;
+        }
+
+        .btn-join:hover {
+            background: #e9f5ff;
+            color: #145f9a;
+            transform: translateY(-1px);
+        }
+
+        .btn-join-icon {
+            font-size: 0.85rem;
+        }
+
+        /* TWO-COLUMN BLOCKS (Document Procedure / Industry Partnership) */
+        .sch-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        /* TAB GROUPS */
+        .sch-tabs {
+            margin-top: 10px;
+        }
+
+        .sch-tab-list {
+            display: inline-flex;
+            flex-wrap: wrap;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            border: 1px solid #d0d6e4;
+        }
+
+        .sch-tab-button {
+            padding: 8px 16px;
+            background: #f4f6fb;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #49566b;
+            border-right: 1px solid #d0d6e4;
+        }
+
+        .sch-tab-button:last-child {
+            border-right: none;
+        }
+
+        .sch-tab-button.active {
+            background: #ffffff;
+            color: #1e2a3a;
+        }
+
+        .sch-tab-panel {
+            border: 1px solid #d0d6e4;
+            border-top: none;
+            padding: 16px 18px;
+            background: #ffffff;
+        }
+
+        .sch-tab-panel ul {
+            margin: 0;
+        }
+
+        /* DEADLINE CARD */
+        .deadline-card {
+            background: #f3f5fa;
+        }
+
+        .deadline-card ol {
+            margin: 0.3em 0 0;
+            padding-left: 1.2em;
+        }
+
+        /* SMALL LABELS */
+        .sch-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6b7c99;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .sch-two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<nav class="main-nav">
+    <!-- LOGO -->
+    <a href="mainpage.html" class="nav-logo-link">
+        <img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo">
+    </a>
+
+    <!-- HAMBURGER BUTTON (separate child of .main-nav) -->
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        ☰
+    </button>
+
+    <!-- NAV ITEMS -->
+    <ul class="nav-list">
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="programs.html">Programs</a></li>
+        <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
+        <li class="nav-item"><a href="events.html">Events</a></li>
+        <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
+        <li class="nav-item"><a href="registration.html">Register</a></li>
+    </ul>
+</nav>
+
+
+<!-- PAGE CONTENT -->
+<div class="scholarship-page">
+
+    <!-- Hero image (you can reuse any banner) -->
+    <div class="scholarship-hero">
+        <img src="../media/SGU_Banner2.webp" alt="SGU Scholarship Banner">
+    </div>
+
+    <h1 class="page-title">Scholarship Opportunities</h1>
+    <p class="page-subtitle">
+        Swiss German University provides scholarship pathways for high-achieving students at both
+        Bachelor and Master level. Explore the available schemes, required documents, and important
+        deadlines below.
+    </p>
+
+    <!-- =====================
+         BACHELOR PROGRAM
+         ===================== -->
+    <h2 class="sch-section-title">Bachelor Program</h2>
+
+    <div class="sch-card-primary">
+        <h2>Apply for SGU Scholarship!</h2>
+        <p>
+            SGU invites SMA grade XII students to apply for academic and non-academic scholarships.
+            Scholarships are awarded based on academic performance, achievements, and selection results.
+        </p>
+        <p>
+            This is a chance to access international-quality education with more affordable tuition fees.
+            Review the requirements and submit your application through our online form.
+        </p>
+
+        <a class="btn-join" href="https://form.jotform.com/242259436739467" target="_blank">
+            Join This Program
+            <span class="btn-join-icon">⧉</span>
+        </a>
+    </div>
+
+    <div class="sch-card">
+        <div class="sch-label">The Documents Needed</div>
+        <h3>Academic & Non-Academic Scholarships</h3>
+
+        <div class="sch-tabs" data-group="bachelor-docs">
+            <div class="sch-tab-list">
+                <button class="sch-tab-button active" data-tab="bachelor-academic">Academic Scholarships</button>
+                <button class="sch-tab-button" data-tab="bachelor-nonacademic">Non-Academic Scholarships</button>
+            </div>
+
+            <div class="sch-tab-panel" data-tab-panel="bachelor-academic">
+                <ul>
+                    <li>Report card SMA grade X–XI with minimum average score of 80.</li>
+                    <li>Recommendation letter from school teacher or principal.</li>
+                    <li>Essay (min. 500 words) describing academic interests and goals.</li>
+                    <li>Academic certificates (if any).</li>
+                    <li>Participation in Academic Potential Test (APT) or equivalent entrance test.</li>
+                </ul>
+            </div>
+
+            <div class="sch-tab-panel" data-tab-panel="bachelor-nonacademic" style="display:none;">
+                <ul>
+                    <li>Report card SMA grade X–XI.</li>
+                    <li>Portfolio of achievements (sports, arts, organization, competition, etc.).</li>
+                    <li>Recommendation letter from coach, mentor, or activity coordinator.</li>
+                    <li>Certificates of achievements or awards.</li>
+                    <li>Short motivation letter explaining contributions and future plans.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="sch-card deadline-card">
+        <h3>Important Deadlines</h3>
+        <ol>
+            <li>Online Registration Period: dates according to the current intake.</li>
+            <li>Announcement of Scholarship Results: communicated via email and official channels.</li>
+        </ol>
+        <p style="margin-top:0.6em;">
+            Please check the SGU website and your email frequently for updated schedules.
+        </p>
+    </div>
+
+    <!-- =====================
+         MASTER PROGRAM
+         ===================== -->
+    <h2 class="sch-section-title">Master Program</h2>
+
+    <div class="sch-card-primary">
+        <h2>Hello, prospective graduate students!</h2>
+        <p>
+            SGU offers exclusive scholarship opportunities for Master applicants, including SGU alumni and
+            graduates from other universities who wish to advance their education.
+        </p>
+        <p>
+            Various schemes are available based on academic performance, professional experience, and
+            selection results. Scholarships may include tuition fee discounts and other financial benefits.
+        </p>
+
+        <a class="btn-join" href="https://form.jotform.com/242259436739467" target="_blank">
+            Join This Program
+            <span class="btn-join-icon">⧉</span>
+        </a>
+    </div>
+
+    <!-- PRIVILEGE (SCHOLARSHIP BY SGU) -->
+    <h2 class="sch-section-title">Privilege (Scholarship by SGU)</h2>
+
+    <div class="sch-card">
+        <div class="sch-tabs" data-group="privilege-docs">
+            <div class="sch-tab-list">
+                <button class="sch-tab-button active" data-tab="alumni">Alumni Scholarships</button>
+                <button class="sch-tab-button" data-tab="achievement">Academic Achievement</button>
+                <button class="sch-tab-button" data-tab="alfasiber">Alfa Silber Scholarship</button>
+            </div>
+
+            <div class="sch-tab-panel" data-tab-panel="alumni">
+                <h3>Alumni Scholarships (Alumni SGU)</h3>
+                <ul>
+                    <li>Applicable for SGU Bachelor alumni who pass the internal interview.</li>
+                    <li>Minimum required GPA as specified in the current intake guideline.</li>
+                    <li>
+                        Graduates with higher GPA may receive increasing tuition fee discounts for
+                        the Master program (e.g. 15%, 25%, 50% tiers).
+                    </li>
+                    <li>
+                        Exact percentage and conditions follow the official SGU scholarship policy
+                        for the current academic year.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sch-tab-panel" data-tab-panel="achievement" style="display:none;">
+                <h3>Academic Achievement Scholarships</h3>
+                <ul>
+                    <li>Targeted at applicants with excellent academic performance at Bachelor level.</li>
+                    <li>Based on cumulative GPA and supporting academic achievements or publications.</li>
+                    <li>Requires submission of academic transcript and curriculum vitae (CV).</li>
+                    <li>May include tuition fee reduction for selected semesters.</li>
+                </ul>
+            </div>
+
+            <div class="sch-tab-panel" data-tab-panel="alfasiber" style="display:none;">
+                <h3>Alfa Silber Scholarship</h3>
+                <ul>
+                    <li>Special cooperation scheme with SGU’s industrial partners.</li>
+                    <li>
+                        Focus on applicants with strong professional potential in selected fields
+                        (engineering, IT, business, life sciences, etc.).
+                    </li>
+                    <li>Additional interviews or technical tests may be required.</li>
+                    <li>
+                        Detailed scheme and quota depend on agreement with the partner institution
+                        for each intake.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROCEDURE + INDUSTRY PARTNERSHIP -->
+    <div class="sch-two-col">
+        <div class="sch-card">
+            <h3>Document Requirement Procedure</h3>
+            <ol>
+                <li>Academic transcript from the latest education level.</li>
+                <li>Certificate of graduation (if already available).</li>
+                <li>Motivational letter describing study and career goals.</li>
+                <li>Copy of ID card / passport.</li>
+            </ol>
+        </div>
+
+        <div class="sch-card">
+            <h3>Privilege Industry Partnership</h3>
+            <ol>
+                <li>
+                    Submit required documents (CV, academic transcript, certificates, portfolio, and
+                    motivation letter) to the designated SGU contact.
+                </li>
+                <li>
+                    Selected applicants may be invited to an online test and interview
+                    (English, academic competency, and motivation).
+                </li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER (same structure, uses global.css) -->
+<footer class="site-footer">
+
+    <div class="footer-left">
+        <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
+
+        <div class="footer-socials">
+            <a href="https://x.com/swissgermanuniv" target="_blank">
+                <img src="../media/x_logo.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/swissgermanuniv" target="_blank">
+                <img src="../media/ig_logo.png" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@SwissGermanUniversityOfficial" target="_blank">
+                <img src="../media/yt_logo.png" alt="YouTube">
+            </a>
+        </div>
+        <div style="display: flex; gap: 20px;">
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Contact</a></p>
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Email</a></p>
+            <p><a href="parents.html">For Parents</a></p>
+        </div>
+    </div>
+
+    <div class="footer-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
+            width="100%" 
+            height="230" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+    
+</footer>
+
+<!-- SIMPLE TAB SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const tabGroups = document.querySelectorAll(".sch-tabs");
+
+    tabGroups.forEach(group => {
+        const buttons = group.querySelectorAll(".sch-tab-button");
+        const panels  = group.querySelectorAll(".sch-tab-panel");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const tabName = btn.getAttribute("data-tab");
+
+                // deactivate all buttons in this group
+                buttons.forEach(b => b.classList.remove("active"));
+                // hide all panels in this group
+                panels.forEach(p => p.style.display = "none");
+
+                // activate clicked
+                btn.classList.add("active");
+                const panel = group.querySelector('[data-tab-panel="' + tabName + '"]');
+                if (panel) panel.style.display = "block";
+            });
+        });
+    });
+});
+</script>
+
+</body>
+</html>
