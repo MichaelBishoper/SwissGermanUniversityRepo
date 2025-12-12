@@ -6,12 +6,6 @@
     <link rel="stylesheet" href="../css/global.css">
     <title>Document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
         .container {
             display: flex;
             align-items: center;
@@ -50,6 +44,66 @@
             .container img, .text {
             width: 100%;
             }
+        }
+
+        /* Container */
+        .para-box-container {
+            width: 100%;
+            max-width: 700px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        /* Top image */
+        .para-box-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #ddd;
+            animation: imgFade 1.2s ease;
+        }
+
+        /* Paragraph box */
+        .para-box {
+            margin-top: 15px;
+            background: #e7edf8;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #b7c4db;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+            animation: floatIn 0.8s ease-out;
+        }
+
+        .para-box p {
+            margin: 0;
+            line-height: 1.6;
+            font-size: 1.05em;
+        }
+
+        /* Simple floating animation */
+        @keyframes floatIn {
+            0% { opacity: 0; transform: translateY(20px) scale(0.97); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Image fade */
+        @keyframes imgFade {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Hover wiggle for fun */
+        .para-box:hover {
+            animation: wiggle 0.4s ease;
+        }
+
+        @keyframes wiggle {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            50% { transform: rotate(-1deg); }
+            75% { transform: rotate(1deg); }
+            100% { transform: rotate(0deg); }
         }
     </style>
 </head>
@@ -98,6 +152,16 @@
   </div>
 </div>
 
+<div class="para-box-container">
+
+    <img src="../media/PartnerCompanies.png" alt="" class="para-box-image">
+
+    <div class="para-box">
+        <p>Explore partner companies for our internships</p>
+    </div>
+
+</div>
+
 <!-- FOOTER -->
 <footer class="site-footer">
     <div class="footer-left">
@@ -130,7 +194,6 @@
             loading="lazy">
         </iframe>
     </div>
-
 </footer>
 <!-- FOOTER END -->
 <script>

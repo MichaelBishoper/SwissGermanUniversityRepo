@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<script src="../js/navburger.js"></script>
+<style>
+    .desc-box {
+    background: #e8f3ff; /* light blue */
+    border-left: 5px solid #3a8dff; /* bold blue accent */
+    padding: 14px 16px;
+    margin: 12px 0;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    }
+
+    .desc-box h4 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    color: #1a5fcc; /* darker blue heading */
+    font-weight: 600;
+    }
+
+    .desc-box p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    }
+
+    .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #e8f3ff; /* light blue */
+    border-left: 5px solid #3a8dff; /* blue accent */
+    padding: 12px 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    }
+
+    .checklist-item h4 {
+    margin: 0;
+    font-size: 15px;
+    color: #1a5fcc;
+    font-weight: 600;
+    }
+
+    .checklist-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    }
+
+    .check-icon {
+    font-size: 18px;
+    color: #3a8dff;
+    margin-top: 2px;
+    }
+
+     /* Container */
+    .para-box-container {
+        width: 100%;
+        max-width: 700px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    /* Top image */
+    .para-box-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #ddd;
+        animation: imgFade 1.2s ease;
+    }
+
+    /* Paragraph box */
+    .para-box {
+        margin-top: 15px;
+        background: #e7edf8;
+        padding: 20px;
+        border-radius: 15px;
+        border: 2px solid #b7c4db;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+        animation: floatIn 0.8s ease-out;
+    }
+
+    .para-box p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 1.05em;
+    }
+
+    /* Simple floating animation */
+    @keyframes floatIn {
+        0% { opacity: 0; transform: translateY(20px) scale(0.97); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Image fade */
+    @keyframes imgFade {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    /* Hover wiggle for fun */
+    .para-box:hover {
+        animation: wiggle 0.4s ease;
+    }
+
+    @keyframes wiggle {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(1deg); }
+        50% { transform: rotate(-1deg); }
+        75% { transform: rotate(1deg); }
+        100% { transform: rotate(0deg); }
+    }
+</style>
+<body>
+
+<!-- HEADER -->
+<nav class="main-nav">
+    <!-- LOGO -->
+    <a href="mainpage.html" class="nav-logo-link">
+        <img class="nav-logo" src="../media/SGU_Logo_Black.png" alt="SGU Logo">
+    </a>
+
+    <!-- HAMBURGER BUTTON (separate child of .main-nav) -->
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        ☰
+    </button>
+
+    <!-- NAV ITEMS -->
+    <ul class="nav-list">
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="programs.html">Programs</a></li>
+        <li class="nav-item"><a href="https://api.whatsapp.com/send?phone=628118010600">Contact Us</a></li>
+        <li class="nav-item"><a href="events.html">Events</a></li>
+        <li class="nav-item"><a href="affiliate.html">Affiliate Links</a></li>
+        <li class="nav-item"><a href="scholarship.html">Scholarships</a></li>
+        <li class="nav-item"><a href="registration.html">Register</a></li>
+    </ul>
+</nav>
+
+<h1 class="heading-card">Internship Information</h1>
+<div class="desc-box">
+  <h4>Unique Internship Programs at SGU</h4>
+  <p>
+    SGU has introduced unique internship programs for its students since its establishment in September 2000. Unlike the majority of other university students, students of SGU must complete two mandatory internships both locally and abroad, making the institution to be the only private university in Indonesia that offers this kind of internship program. The first internship, normally in the 3rd semester is in Indonesia and the second one, in the 6th semester, is in Germany or another country.
+
+The purpose of the first internship in Indonesia is to introduce the students to the working environment in an Indonesian company. This initial working experience gives the students a good opportunity to understand the applied technology, various processes and systems that are currently available in industry – and to relate all of those aspects to the field of study they have chosen at SGU.
+
+The purpose of the second internship in Germany or another country is to further apply the basic science and various applied technologies that the students have gained during semester 4 and 5 in an industrial setting in Germany. At the same time, the students get precious experience. Eligible and qualified students also have the opportunity to gain an international degree from a partner university in Germany.
+
+During students’ internship period in Germany, Swiss German University established a representative office named SGUW (Swiss German University Westphalia) which is located at South Westphalia University of Applied Sciences at Soest, Germany. SGUW has appointed staff to cater the needs, concerns, and necessity of students during their internship period in Germany. Through SGUW, we ensure that our students receive the best internship experience and provide family members with thorough observation over our students and a piece of mind.
+  </p>
+</div>
+
+<div class="desc-box">
+  <h4>Positive Effect of Internships</h4>
+  <p>
+    The SGU internship program sets the standard worldwide, in which a single university sends 150-250 students every year to various companies and institutions in Germany, Switzerland, and other countries. This requires the establishment of very close cooperation with industry, and creating close links with Germany and other countries.
+
+The students who are sent to Germany, Switzerland and other countries have help to establish and maintain close cooperation not only between SGU and the foreign industry, but also between Indonesia and the countries. This is apparent from the fact that several students have successfully opened a branch or office of the companies where they did the internship, such as PT Laser Indonesia, PT Pharmatec, and others.
+  </p>
+</div>
+
+
+<h1 class="heading-card">Local Interships</h1>
+<div class="checklist-item">
+  <div class="check-icon">✔</div>
+  <div>
+    <h4>First Hand Experience</h4>
+    <p>Students are exposed to local working conditions during their time in the internship.</p>
+  </div>
+</div>
+
+<div class="checklist-item">
+  <div class="check-icon">✔</div>
+  <div>
+    <h4>Mandatory Internship</h4>
+    <p>Listen, I just want a good enough score so that I can get a good GPA, find a good job, settle with my boyfriend and make music together.</p>
+  </div>
+</div>
+<h1 class="heading-card">External Internships</h1>
+
+
+<div class="para-box-container">
+
+    <img src="../media/PartnerCompanies.png" alt="" class="para-box-image">
+
+    <div class="para-box">
+        <a href="https://sgu.ac.id/id/university-life/internship/local/"><p>Explore partner companies for our internships</p></a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="footer-left">
+        <img src="../media/SGU_Logo_New.png" alt="SGU Logo" class="footer-logo">
+
+        <div class="footer-socials">
+            <a href="https://x.com/swissgermanuniv" target="_blank">
+                <img src="../media/x_logo.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/swissgermanuniv" target="_blank">
+                <img src="../media/ig_logo.png" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@SwissGermanUniversityOfficial" target="_blank">
+                <img src="../media/yt_logo.png" alt="YouTube">
+            </a>
+        </div>
+        <div style="display: flex; gap: 20px;">
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Contact</a></p>
+            <p><a href="https://api.whatsapp.com/send?phone=628118010600">Email</a></p>
+            <p><a href="parents.html">For Parents</a></p>
+        </div>
+    </div>
+
+    <div class="footer-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.162100125015!2d106.64872084251913!3d-6.225372400202277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd9297759c9%3A0x8e161acb7e1e265f!2sThe%20Prominence%20Office%20Tower%2C%20Jl.%20Jalur%20Sutera%20Bar.%20No.1%2C%20Panunggangan%20Tim.%2C%20Kec.%20Pinang%2C%20Kota%20Tangerang%2C%20Banten%2015143!5e0!3m2!1sen!2sid!4v1764573073675!5m2!1sen!2sid"
+            width="100%" 
+            height="230" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+    
+</footer>
+<!-- FOOTER END -->
+</body>
+</html>
