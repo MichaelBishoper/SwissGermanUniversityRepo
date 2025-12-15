@@ -18,20 +18,30 @@
         }
 
         /* CONTENT AREA */
-        .faculty-container {
-            width: 60%;
-            display: flex;
-            justify-content: space-between;
+       .faculty-container{
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;          /* KEY */
         }
 
         /* CLICKABLE STACK ITEM */
-        .faculty-stack {
-            width: 30%;
-            text-decoration: none;
-            color: white;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column; /* image on top, bar below */
+        .faculty-stack{
+        flex: 0 0 calc(33.333% - 18px);
+        width: auto;              /* override your width:30% */
+        }
+        /* tablet: 2 across */
+        @media (max-width: 900px){
+        .faculty-container{ width: 90%; }
+        .faculty-stack{ flex: 0 0 calc(50% - 18px); }
+        }
+
+        /* mobile: 1 per row */
+        @media (max-width: 600px){
+        .faculty-container{ width: 92%; }
+        .faculty-stack{ flex: 0 0 100%; }
+        .faculty-section{ height: auto; }  /* IMPORTANT: remove fixed height */
         }
 
         .faculty-image-wrapper {
@@ -323,6 +333,9 @@
             </span>
         </div>
     </a>
+     <div class="tuition-image-box">
+    <img src="../media/Tuotionfee.png" alt="Tuition Fee" width="1360">
+    </div>
     <div class="tuition-image-box">
     <img src="../media/Tuitionfee_Master.png" alt="Tuition Fee" width="1360">
     </div>

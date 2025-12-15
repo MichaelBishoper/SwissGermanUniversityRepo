@@ -12,15 +12,6 @@
 
         }
 
-        /* Individual section */
-        .nav-section {
-            border: 2px solid rgb(100, 121, 139);
-            border-radius: 20px;
-            padding: 15px;
-            background: #c2cde2;
-            width: 600px;
-        }
-
         /* MOBILE ONLY (screens ≤ 600px) */
         @media (max-width: 600px) {
             .nav-section {
@@ -390,7 +381,52 @@
             border: none;
             background: none;
         }
+
+
+        }
+
+        /* Main layout should not be fixed-width */
+    .main-layout {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    padding: 0 12px;
     }
+
+    /* 2×2 grid on desktop, 1 column on mobile */
+    .nav-block {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: start;
+    }
+
+    /* Sections should be fluid, not fixed 600px */
+    .nav-section {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    }
+
+    /* Tablet -> 1 column */
+    @media (max-width: 900px) {
+    .nav-block {
+        grid-template-columns: 1fr;
+    }
+    }
+
+    html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    }
+    *, *::before, *::after {
+    box-sizing: border-box;
+    }
+    img, iframe {
+    max-width: 100%;
+    height: auto;
+    }
+
+
     </style>
 </head>
 <script src="../js/navburger.js"></script>
@@ -500,7 +536,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
-          </span>
           <span>Read More:</span>
         </summary>
 
